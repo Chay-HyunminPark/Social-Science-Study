@@ -1,10 +1,9 @@
 ---
-title: "My title"
-subtitle: "My subtitle if needed"
+title: "Potential Factors of Decreasing Birth Rates in the US since the Great Recession and Beyond"
+subtitle: "Reproduction of 'The Puzzle of Falling US Birth Rates since the Great Recession'(Kearney, Levine & Pardue, 2022)"
 author: 
-  - First author
-  - Another author
-thanks: "Code and data are available at: LINK."
+  - Chay Park
+thanks: "Code and data are available at: https://github.com/Chay-HyunminPark/Social-Science-Study."
 date: today
 date-format: long
 abstract: "First sentence. Second sentence. Third sentence. Fourth sentence."
