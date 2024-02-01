@@ -21,7 +21,12 @@ library(tidyverse)
 library(palmerpenguins)
 ```
 
-
+#### #### 
+The results section should convey findings.
+The discussion should include three or four sub-sections that each focus on an interesting point, and there should be another sub-section on the weaknesses of your paper, and another on potential next steps for it.
+In the discussion section, and any other relevant section, please be sure to discuss ethics and bias, with reference to relevant literature.
+#### ####
+ data, results, discussion, and references.
 # Introduction
 
 You can and should cross-reference sections and sub-sections. 
