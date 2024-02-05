@@ -102,8 +102,30 @@ usmap::plot_usmap(data = state_data, values = "brate_1544_thsnds_ch_pct", lines 
 Please note that the birth rate data and subgroup data are simulated for demonstration purposes. You would need to replace them with actual data if available. Additionally, the legend for the map in the third figure is based on simulated data and may need adjustments based on the actual data distribution.
 
 User
+write me three test codes that can be applied to the dataset we created before
 
 ChatGPT
+Sure, here are three test codes that can be applied to the dataset we created before:
+
+1. Test code to check the summary statistics of the birth rate data:
+
+```R
+summary(birth_data)
+```
+
+2. Test code to visualize the distribution of birth rates over the years:
+
+```R
+hist(birth_data$births, main = "Distribution of Birth Rates", xlab = "Births per 1000 women age 15-44", ylab = "Frequency")
+```
+
+3. Test code to calculate the correlation between birth rates and year:
+
+```R
+cor(birth_data$year, birth_data$births)
+```
+
+These test codes provide a quick way to check the summary statistics, visualize the distribution, and calculate the correlation of the birth rate data we generated earlier.
 
 User
 
