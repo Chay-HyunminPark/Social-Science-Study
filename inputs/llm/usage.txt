@@ -128,6 +128,162 @@ cor(birth_data$year, birth_data$births)
 These test codes provide a quick way to check the summary statistics, visualize the distribution, and calculate the correlation of the birth rate data we generated earlier.
 
 User
+From this code: 
+```{r}
+#| echo: false
+#| eval: true
+#| warning: false
+#| label: fig-usbrate-graph
+#| fig-cap: "Trend in US Birth Rates"
+
+### Trend in US Birth Rates
+
+# Load necessary libraries
+library(ggplot2)
+
+# Set seed for reproducibility
+set.seed(123)
+
+# Read the data from CSV file
+data <- read.csv(file = here::here("outputs/data/fig_1.csv"))
+
+# Plotting the data
+ggplot(data, aes(x = year, y = brate_all)) +
+  geom_line(color = "blue") +
+  geom_vline(xintercept = 2007, linetype = "dotted") +
+  labs(x = "Year", y = "Births per 1,000 women age 15-44",
+       title = "Trend in US Birth Rates",
+       caption = "Birth Rates collected from CDC Vital Statistics Births Reports for 2015, 2019 and 2020.") +
+  theme_classic()
+```
+
+Please modify the R script. I want to add more lines on the y-axis and x-axis. For instance, I want to have y-axis starting from 50 and goes up to 80 by 5. And I want to have the x-axis year from 1980 to 2020 goes up by 5 years but still want to have slits for every year. 
+
+ChatGPT
+Sure, I'll modify the R script to adjust the y-axis and x-axis scales as per your requirements:
+
+```R
+# Load necessary libraries
+library(ggplot2)
+
+# Set seed for reproducibility
+set.seed(123)
+
+# Read the data from CSV file
+data <- read.csv(file = here::here("outputs/data/fig_1.csv"))
+
+# Plotting the data
+ggplot(data, aes(x = year, y = brate_all)) +
+  geom_line(color = "blue") +
+  geom_vline(xintercept = 2007, linetype = "dotted") +
+  scale_y_continuous(limits = c(50, 80), breaks = seq(50, 80, by = 5)) +
+  scale_x_continuous(limits = c(1980, 2020), breaks = seq(1980, 2020, by = 5), minor_breaks = seq(1980, 2020, by = 1)) +
+  labs(x = "Year", y = "Births per 1,000 women age 15-44",
+       title = "Trend in US Birth Rates",
+       caption = "Birth Rates collected from CDC Vital Statistics Births Reports for 2015, 2019, and 2020.") +
+  theme_classic()
+```
+
+This script will adjust the y-axis scale to start from 50 and go up to 80, with breaks at every 5 units. Similarly, the x-axis scale will start from 1980 and go up to 2020 with breaks at every 5 years, and minor breaks at every year.
+
+
+User
+I also want to note 2007 on the 2007 dotted line. And I want to have horizontal lines in light grey colour that's extended from the y-axis.
+
+ChatGPT
+Certainly, I'll add annotations for the year 2007 on the dotted line and horizontal lines extending from the y-axis to enhance readability:
+
+```R
+# Load necessary libraries
+library(ggplot2)
+
+# Set seed for reproducibility
+set.seed(123)
+
+# Read the data from CSV file
+data <- read.csv(file = here::here("outputs/data/fig_1.csv"))
+
+# Plotting the data
+ggplot(data, aes(x = year, y = brate_all)) +
+  geom_line(color = "blue") +
+  geom_vline(xintercept = 2007, linetype = "dotted") +
+  annotate("text", x = 2007, y = 80, label = "2007", vjust = -0.5, hjust = 0.5, color = "black") +
+  geom_hline(yintercept = seq(50, 80, by = 5), color = "lightgrey") +
+  scale_y_continuous(limits = c(50, 80), breaks = seq(50, 80, by = 5)) +
+  scale_x_continuous(limits = c(1980, 2020), breaks = seq(1980, 2020, by = 5), minor_breaks = seq(1980, 2020, by = 1)) +
+  labs(x = "Year", y = "Births per 1,000 women age 15-44",
+       title = "Trend in US Birth Rates",
+       caption = "Birth Rates collected from CDC Vital Statistics Births Reports for 2015, 2019, and 2020.") +
+  theme_classic()
+```
+
+This script will add annotations for the year 2007 on the dotted line and horizontal lines in light grey color extended from the y-axis.
+
+User
+I want to have scale from 1980 to 2020 for each year
+
+ChatGPT
+If you want to have a tick mark for each year from 1980 to 2020 on the x-axis, you can adjust the breaks in the scale_x_continuous function. Here's the modified script:
+
+```R
+# Load necessary libraries
+library(ggplot2)
+
+# Set seed for reproducibility
+set.seed(123)
+
+# Read the data from CSV file
+data <- read.csv(file = here::here("outputs/data/fig_1.csv"))
+
+# Plotting the data
+ggplot(data, aes(x = year, y = brate_all)) +
+  geom_line(color = "blue") +
+  geom_vline(xintercept = 2007, linetype = "dotted") +
+  annotate("text", x = 2007, y = 80, label = "2007", vjust = -0.5, hjust = 0.5, color = "black") +
+  geom_hline(yintercept = seq(50, 80, by = 5), color = "lightgrey") +
+  scale_y_continuous(limits = c(50, 80), breaks = seq(50, 80, by = 5)) +
+  scale_x_continuous(limits = c(1980, 2020), breaks = seq(1980, 2020, by = 1)) +
+  labs(x = "Year", y = "Births per 1,000 women age 15-44",
+       title = "Trend in US Birth Rates",
+       caption = "Birth Rates collected from CDC Vital Statistics Births Reports for 2015, 2019, and 2020.") +
+  theme_classic()
+```
+
+This script will set tick marks for each year from 1980 to 2020 on the x-axis.
+
+User
+but only have x-axis tag goes up by 5 such as 1980, 1985, 1990 
+
+ChatGPT
+Got it, you want to label the x-axis with years that increase by 5, while still having ticks for every year. Here's how you can modify the x-axis scale to achieve this:
+
+```R
+# Load necessary libraries
+library(ggplot2)
+
+# Set seed for reproducibility
+set.seed(123)
+
+# Read the data from CSV file
+data <- read.csv(file = here::here("outputs/data/fig_1.csv"))
+
+# Plotting the data
+ggplot(data, aes(x = year, y = brate_all)) +
+  geom_line(color = "blue") +
+  geom_vline(xintercept = 2007, linetype = "dotted") +
+  annotate("text", x = 2007, y = 80, label = "2007", vjust = -0.5, hjust = 0.5, color = "black") +
+  geom_hline(yintercept = seq(50, 80, by = 5), color = "lightgrey") +
+  scale_y_continuous(limits = c(50, 80), breaks = seq(50, 80, by = 5)) +
+  scale_x_continuous(limits = c(1980, 2020), breaks = seq(1980, 2020, by = 1), labels = function(x) ifelse(x %% 5 == 0, x, "")) +
+  labs(x = "Year", y = "Births per 1,000 women age 15-44",
+       title = "Trend in US Birth Rates",
+       caption = "Birth Rates collected from CDC Vital Statistics Births Reports for 2015, 2019, and 2020.") +
+  theme_classic()
+```
+
+In this modified script, the labels on the x-axis will only display for years that are multiples of 5, but tick marks will still appear for every year from 1980 to 2020.
+
+User
 
 ChatGPT
 
