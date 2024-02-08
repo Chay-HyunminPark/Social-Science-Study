@@ -14,7 +14,6 @@
 library(ggplot2)
 library(dplyr)
 library(tidyr)
-library(usmap)
 
 #### Simulate data ####
 # Simulated birth rate data from 1980 to 2020
@@ -53,10 +52,3 @@ ggplot(subgroup_data, aes(x = year, y = births, color = subgroup)) +
   geom_line() +
   labs(x = "Year", y = "Number of Births", title = "Trends in Birth Rates by Population Subgroup")
 
-# Third table: State-wise Birth Rate Change
-state_data_table <- state_data
-
-# Third figure: Map of US with change in birth rate legend
-usmap::plot_usmap(data = state_data, values = "brate_1544_thsnds_ch_pct", lines = "lightgray") +
-  scale_fill_continuous(name = "Change in Birth Rate", low = "red", high = "green", breaks = c(-15, -10, -5, 0, 5, 10, 15), labels = c("< -10", "-5 to -10", "-5 to 0", "0", "0 to 5", "5 to 10", "> 10")) +
-  labs(title = "Change in Birth Rates by State")
