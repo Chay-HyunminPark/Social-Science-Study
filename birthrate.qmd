@@ -28,6 +28,24 @@ library(palmerpenguins)
 # Data {#sec-data}
 
 ## Source
+### Trend in US Birth Rates
+
+# Load necessary libraries
+library(ggplot2)
+
+# Read the data from CSV file
+data <- read.csv("fig_1.csv")
+
+# Plotting the data
+ggplot(data, aes(x = year, y = brate_all)) +
+  geom_line(color = "blue") +
+  geom_vline(xintercept = 2007, linetype = "dotted") +
+  labs(x = "Year", y = "Births per 1,000 women age 15-44",
+       title = "Birth Rates per 1,000 Women Age 15-44 Over Time",
+       subtitle = "Source: CDC Vital Statistics Births Reports (2015, 2019, 2020)",
+       caption = "Trend in US Birth Rates") +
+  theme_minimal()
+
 
 ## Methodology
 
