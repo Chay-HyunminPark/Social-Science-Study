@@ -1,5 +1,6 @@
 #### Preamble ####
 # Purpose: To sort out relevant necessary data from the data set 
+# ~not sure whether I should haave this script tho
 # Author: Chay Park
 # Date: 4 February 2024
 # Contact: chay.park@mail.utoronto.ca
@@ -13,9 +14,6 @@ install.packages(c("knitr", "lubridate", "tidyverse"))
 library(knitr)
 library(lubridate)
 library(tidyverse)
-
-packages <- list_packages(limit = 10)
-packages
 
 #### Clean data ####
 

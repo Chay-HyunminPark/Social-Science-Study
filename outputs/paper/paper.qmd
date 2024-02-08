@@ -59,61 +59,14 @@ ggplot(data, aes(x = year, y = brate_all)) +
   theme_classic()
 
 ```
-```{r}
-# Load necessary libraries
-library(ggplot2)
-library(gridExtra)
-
-# Set seed for reproducibility
-set.seed(123)
-
-# Read the data from CSV file
-data <- read.csv(file = here::here("outputs/data/figs_2a_2b.csv"))
-
-# Plotting the first line graph (Graph A)
-graph_A <- ggplot(data, aes(x = year)) +
-  geom_line(aes(y = brate_1519, color = "Age 15-19"), size = 1.2) +
-  geom_line(aes(y = brate_2024, color = "Age 20-24"), size = 1.2) +
-  geom_line(aes(y = brate_2529, color = "Age 25-29"), size = 1.2) +
-  geom_line(aes(y = brate_3034, color = "Age 30-34"), size = 1.2) +
-  geom_line(aes(y = brate_3539, color = "Age 35-39"), size = 1.2) +
-  geom_line(aes(y = brate_4044, color = "Age 40-44"), size = 1.2) +
-  scale_color_manual(values = c("Age 15-19" = "blue", "Age 20-24" = "orange", "Age 25-29" = "grey",
-                                 "Age 30-34" = "yellow", "Age 35-39" = "cyan", "Age 40-44" = "green"),
-                     labels = c("Age 15-19", "Age 20-24", "Age 25-29", "Age 30-34", "Age 35-39", "Age 40-44"),
-                     name = "Age Group") +
-  geom_vline(xintercept = 2007, linetype = "dotted") +
-  geom_hline(yintercept = seq(0, 140, by = 20), color = "lightgrey") +
-  scale_x_continuous(limits = c(1980, 2020), breaks = seq(1980, 2020, by = 5)) +
-  scale_y_continuous(limits = c(0, 140), breaks = seq(0, 140, by = 20)) +
-  labs(x = "Year", y = "Births per 1,000 women in relevant population subgroup",
-       title = "Trend in US Birth Rates by Age Group",
-       caption = "Birth Rates collected from CDC Vital Statistics Births Reports for 2015, 2019, and 2020.") +
-  theme_classic()
-
-# Plotting the second line graph (Graph B)
-graph_B <- ggplot(data, aes(x = year)) +
-  geom_line(aes(y = brate_hisp, color = "Hispanic"), size = 1.2) +
-  geom_line(aes(y = brate_blacknh, color = "Black, non-Hispanic"), size = 1.2) +
-  geom_line(aes(y = brate_whitenh, color = "White, non-Hispanic"), size = 1.2) +
-  scale_color_manual(values = c("Hispanic" = "grey", "Black, non-Hispanic" = "orange", "White, non-Hispanic" = "blue"),
-                     labels = c("Hispanic", "Black, non-Hispanic", "White, non-Hispanic"),
-                     name = "Race/Ethnicity") +
-  geom_vline(xintercept = 2007, linetype = "dotted") +
-  geom_hline(yintercept = seq(0, 140, by = 20), color = "lightgrey") +
-  scale_x_continuous(limits = c(1990, 2020), breaks = seq(1990, 2020, by = 5)) +
-  scale_y_continuous(limits = c(0, 140), breaks = seq(0, 140, by = 20)) +
-  labs(x = "Year", y = "Births per 1,000 women in relevant population subgroup",
-       title = "Trend in US Birth Rates by Race/Ethnicity",
-       caption = "Birth Rates collected from CDC Vital Statistics Births Reports for 2015, 2019, and 2020.") +
-  theme_classic()
-
-# Arrange both graphs side by side
-grid.arrange(graph_A, graph_B, nrow = 1)
-
-```
 
 ```{r}
+#| echo: false
+#| eval: true
+#| warning: false
+#| message: false
+#| label: fig-trend-brate-graph
+#| fig-cap: "Trends in Birth Rates by Population Subgroup"
 # Load necessary libraries
 library(ggplot2)
 library(gridExtra)
@@ -148,6 +101,9 @@ graph_A <- ggplot(data, aes(x = year)) +
   theme_classic() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1, family = "Times"))
 
+```
+
+```{r}
 # Plotting the second line graph (Graph B)
 graph_B <- ggplot(data, aes(x = year)) +
   geom_line(aes(y = brate_hisp, color = "Hispanic"), size = 1.2) +
@@ -162,12 +118,12 @@ graph_B <- ggplot(data, aes(x = year)) +
   scale_y_continuous(limits = c(0, 140), breaks = seq(0, 140, by = 20)) +
   labs(title = "B: Race and ethnicity (ages 15-44)") +
   theme_classic()
+  theme(axis.text.x = element_text(angle = 45, hjust = 1, family = "Times"))
 
 # Arrange both graphs side by side
 grid.arrange(graph_A, graph_B, nrow = 1)
 
 ```
-
 
 
 ## Methodology
