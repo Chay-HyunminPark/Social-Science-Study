@@ -36,12 +36,14 @@ The paper is about the factors that was not discussed in the Kearney's paper. Th
 
 Over the 40 years,
 
-Age over 30 
-
-
 * what was done, why and what was found, 3-4 paragraphs
 
-From now on, every white refers to non-Hispanic, caucassian. Every black refers to non-Hispanic, African American. Hispanic refers to people with Hispanic ethinicity majority from south America. 
+We replicate the paper by Kearney, Levine, and Pardue (2022) with a focus on the following research questions: 
+- What is the trend in the US birth rates over the period 1980 to 2020?
+- How does the birth rates vary by the age group?
+- How does the birth rates vary by the race and ethnicity of mothers'? 
+
+The original code in the replication package is written in Stata. However, this paper utilizes R (R Core Team 2020) to analyze a dataset from the replication package. Packages such as ggplot2 (Wickham et al. 2016) for creating graphical representations, kableExtra (Zhu et al. 2021) for enhancing table aesthetics, and lubridate (Grolemund et al. 2021) for handling date-related operations were employed. Additionally, the Tidyverse framework (Wickham et al. 2019) ensures cohesiveness, while Dplyr (Wickham et al. 2021) facilitates data manipulation.
 
 # Data {#sec-data}
 
@@ -49,7 +51,7 @@ From now on, every white refers to non-Hispanic, caucassian. Every black refers 
 The data for the trend in US Birth Rates, births per 1,000 women age 15-44 from the period 1980 to 2020 was acquired from CDC Vital Statistics Births Reports for 2015, 2019 and 2020 (Martin and Mathews 2017; Martin and Driscoll 2021; Hamilton and Osterman 2021). Another trends in Birth Rates by Population Subgroup, specifically birth rates by age group, race and ethnicity are again gathered from CDC Vital Statistics Births Reports. Original paper uses single-age population counts, among all races from 1969-2019 and by race and Hispanic origin from 1990-2019, from the CDC SEER database (CDC NCI 2021). 
 
 ## Features
-
+From now on, every white refers to non-Hispanic, caucassian. Every black refers to non-Hispanic, African American. Hispanic refers to people with Hispanic ethinicity majority from south America. 
 
 # Results
 The results section should convey findings.
