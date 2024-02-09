@@ -162,34 +162,29 @@ grid.arrange(graph_A, graph_B, nrow = 1)
 Figure 2 A, 낙태법 적용 나이, 기술의 발전으로 인한 낙태 도입률, -> 경제적으로 안정되거나 아이의 부담을 지기 싫은 젊은 여성들은 낙태 ㅗ 기술의 발전으로 인한 건강 유지 및 출산 정책으로 인한 30세 이상의 경제적으로 안정된 여성들은 high willingness to give births, showing ascending pattern in birth rates over the 40 years. 
 
 ```{r}
-#| echo: false
-#| eval: true
-#| warning: false
-#| message: false
-#| label: tbl-race-table
-#| tbl-cap: "Race and ethinicity (ages 15-44)"
-
-#### Table 1a ####
-# Count the number of births per 1,000 women in relevant population subgroup by their race and ethinicity in the ages cohort from 15 to 44. 
-#### ####
-
-# Install the necessary packages if not already installed
-install.packages(c("knitr","lubridate","tidyverse","kableExtra"))
-
-# Load required libraries
+# Load necessary libraries
 library(dplyr)
 library(knitr)
-library(lubridate)
-library(tidyverse)
 library(kableExtra)
 
-# Set seed for reproducibility
-set.seed(123)
+# Read the data from CSV file
+data <- read.csv(file = here::here("outputs/data/figs_2a_2b.csv"))
 
-# Load the CSV file
+# Filter the data to include years starting from 1990
+filtered_data <- data %>%
+  filter(year >= 1990)
 
+# Select the required columns and rename them
+selected_data <- filtered_data %>%
+  select(Year = year, White = brate_whitenh, Black = brate_blacknh, Hispanic = brate_hisp)
+
+# Print the table using additional styling
+kable(selected_data, caption = "Trends in Birth Rates by Population Race and Ethnicity (ages 15-44)", format = "html") %>%
+  kable_styling(full_width = FALSE) %>%
+  add_header_above(c("","Births per 1,000 women" = 3))
 
 ```
+
 Figure 3 B, major religion of Hispanic, Black, White  religious reason of each race and ethnicity 
 
 # 낙태법 적용 나이, 히스패닉과 아프리칸, 서양인들의 종교적 문화 차이-whether they accept the abortion or not, cultural perspectives, whether marriage affects the decision of keeping a child or not.<- financial reason 
