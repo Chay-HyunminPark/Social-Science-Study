@@ -6,7 +6,7 @@ author:
 thanks: "Code and data are available at: https://github.com/Chay-HyunminPark/Social-Science-Study."
 date: today
 date-format: long
-abstract: "First sentence. Second sentence. Third sentence. Fourth sentence."
+abstract: "Decreasing birth rates became the conversation topic globally in recent years. Kearney, Levine, and Pardue (2022) analyzed possible factors in demographical, economical and social aspects from the period 1980 to 2020. By reproducing some applications of the 'The Puzzle of Falling US Birth Rates Since the Great Recession,' this paper demonstrate potential factors correlating aspects on economics, religions, laws and enforcement applied in each states."
 format: pdf
 number-sections: true
 bibliography: references.bib
@@ -23,8 +23,25 @@ library(palmerpenguins)
 
 
 # Introduction
+1) broader context to motivate
+2) some detail about what the paper is about
+3) a clear gap that needs to be filled
+4) what was done
+5) what was found
+6) why it is important
+7) the structure of the paper
+
+In an economical aspect, birth rates are important factor that decides the growth of a country. 
+The paper is about the factors that was not discussed in the Kearney's paper. They pointed out that as of 2007, the Great Recession, was the turning point of declining tendency in birth rates, however, it is beyond just demographical, economical, social and political factors. In this paper we will 
+
+Over the 40 years,
+
+Age over 30 
 
 
+* what was done, why and what was found, 3-4 paragraphs
+
+From now on, every white refers to non-Hispanic, caucassian. Every black refers to non-Hispanic, African American. Hispanic refers to people with Hispanic ethinicity majority from south America. 
 # Data {#sec-data}
 
 ## Source
@@ -58,8 +75,9 @@ ggplot(data, aes(x = year, y = brate_all)) +
        caption = "Birth Rates collected from CDC Vital Statistics Births Reports for 2015, 2019, and 2020.") +
   theme_classic()
 ```
+Figure 1 Trend in US Birth Rates, not just the Great Recession was there another events? 
+낙태법 시행일, 법적으로 진행된 일, economic crisis other than great recession 
 
-# 낙태법 시행일, 법적으로 진행된 일, economic crisis other than great recession 
 ```{r}
 #| echo: false
 #| eval: true
@@ -124,38 +142,14 @@ graph_B <- ggplot(data, aes(x = year)) +
         plot.title = element_text(size = 7, family = "Times"),
         legend.position = "none")
 
-
-# Read the data from the new CSV file fig_2e
-data_2e <- read.csv(file = here::here("outputs/data/fig_2e.csv"))
-
-# Plotting the third line graph (Graph C)
-graph_C <- ggplot(data_2e, aes(x = year)) +
-  geom_line(aes(y = brate_unmarried, color = "blue"), size = 0.4) +
-  geom_line(aes(y = brate_married, color = "orange"), size = 0.4) +
-  geom_vline(xintercept = 2007, linetype = "dotted") +
-  annotate("text", x = 2007, y = 120, label = "2007", vjust = -0.5, hjust = 0.5, color = "black", family = "Times") +
-  geom_hline(yintercept = seq(0, 140, by = 20), color = "lightgrey") +
-  scale_y_continuous(limits = c(0, 140), breaks = seq(0, 140, by = 20), labels = seq(0, 140, by = 20)) +
-  scale_x_continuous(limits = c(1980, 2020), breaks = seq(1980, 2020, by = 5), labels = function(x) ifelse(x %% 5 == 0, x, "")) +
-  labs(x = NULL, 
-       y = 'Births per 1,000 women in relevant population subgroup',
-       title = "C: Marital Status",
-       caption = NULL,
-       family = "Times") +
-  theme_classic() +
-  theme(axis.text.x = element_text(angle = -45, hjust = 1, family = "Times", size = 5),
-        plot.title = element_text(size = 7, family = "Times"),
-        legend.position = "none")
-
-# divide frame in 3x1 grid
-par(mfrow = c(3,1))
-
-# draw 3 graphs
-plot(graph_A)
-plot(graph_B)
-plot(graph_C)
+# Arrange both graphs side by side
+grid.arrange(graph_A, graph_B, nrow = 1)
 
 ```
+Figure 2 A, 낙태법 적용 나이, 기술의 발전으로 인한 낙태 도입률, -> 경제적으로 안정되거나 아이의 부담을 지기 싫은 젊은 여성들은 낙태 ㅗ 기술의 발전으로 인한 건강 유지 및 출산 정책으로 인한 30세 이상의 경제적으로 안정된 여성들은 high willingness to give births, showing ascending pattern in birth rates over the 40 years. 
+
+Figure 3 B, major religion of Hispanic, Black, White  religious reason of each race and ethnicity 
+
 # 낙태법 적용 나이, 히스패닉과 아프리칸, 서양인들의 종교적 문화 차이-whether they accept the abortion or not, cultural perspectives, whether marriage affects the decision of keeping a child or not.<- financial reason 
 
 # map
