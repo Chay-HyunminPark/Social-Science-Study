@@ -28,8 +28,8 @@ library(palmerpenguins)
 3) a clear gap that needs to be filled
 4) what was done
 5) what was found
-6) why it is important
-7) the structure of the paper
+6) why it is important - replacement level fertility
+7) the structure of the paper - 1. trend in US Birth Rates 2. Trends in Birth Rates by Population Subgroup 2.1 Five-year age group 2.2 Race and ethinicity 
 
 In an economical aspect, birth rates are important factor that decides the growth of a country. 
 The paper is about the factors that was not discussed in the Kearney's paper. They pointed out that as of 2007, the Great Recession, was the turning point of declining tendency in birth rates, however, it is beyond just demographical, economical, social and political factors. In this paper we will 
@@ -42,7 +42,18 @@ Age over 30
 * what was done, why and what was found, 3-4 paragraphs
 
 From now on, every white refers to non-Hispanic, caucassian. Every black refers to non-Hispanic, African American. Hispanic refers to people with Hispanic ethinicity majority from south America. 
+
 # Data {#sec-data}
+
+## Methodology
+The data for the trend in US Birth Rates, births per 1,000 women age 15-44 from the period 1980 to 2020 was acquired from CDC Vital Statistics Births Reports for 2015, 2019 and 2020 (Martin and Mathews 2017; Martin and Driscoll 2021; Hamilton and Osterman 2021). Another trends in Birth Rates by Population Subgroup, specifically birth rates by age group, race and ethnicity are again gathered from CDC Vital Statistics Births Reports. Original paper uses single-age population counts, among all races from 1969-2019 and by race and Hispanic origin from 1990-2019, from the CDC SEER database (CDC NCI 2021). 
+
+## Features
+
+
+# Results
+The results section should convey findings.
+## Table, graph, table, graph
 
 ## Source
 ```{r}
@@ -152,23 +163,7 @@ Figure 3 B, major religion of Hispanic, Black, White  religious reason of each r
 
 # 낙태법 적용 나이, 히스패닉과 아프리칸, 서양인들의 종교적 문화 차이-whether they accept the abortion or not, cultural perspectives, whether marriage affects the decision of keeping a child or not.<- financial reason 
 
-# map
-
-
-## Methodology
-
-## Features
-
-### Data Cleaning
-
-### Data Modification
-
-### Data Visualization
-
-
-# Results
-The results section should convey findings.
-## Table, graph, table, graph
+Map
 
 # Discussion
 
