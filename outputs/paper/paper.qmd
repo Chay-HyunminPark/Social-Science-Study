@@ -28,15 +28,46 @@ library(palmerpenguins)
 # Data {#sec-data}
 
 ## Source
-
-
 ```{r}
 #| echo: false
 #| eval: true
 #| warning: false
 #| message: false
 #| label: fig-bratetrend-graph
+#| fig-cap: "Trend in US Birth Rates"
+
+# Load necessary libraries
+library(ggplot2)
+
+# Set seed for reproducibility
+set.seed(123)
+
+# Read the data from CSV file
+data <- read.csv(file = here::here("outputs/data/fig_1.csv"))
+
+# Plotting the data
+ggplot(data, aes(x = year, y = brate_all)) +
+  geom_line(color = "blue") +
+  geom_vline(xintercept = 2007, linetype = "dotted") +
+  annotate("text", x = 2007, y = 80, label = "2007", vjust = -0.5, hjust = 0.5, color = "black") +
+  geom_hline(yintercept = seq(50, 80, by = 5), color = "lightgrey") +
+  scale_y_continuous(limits = c(50, 80), breaks = seq(50, 80, by = 5)) +
+  scale_x_continuous(limits = c(1980, 2020), breaks = seq(1980, 2020, by = 1), labels = function(x) ifelse(x %% 5 == 0, x, "")) +
+  labs(x = "Year", y = "Births per 1,000 women age 15-44",
+       title = "Trend in US Birth Rates",
+       caption = "Birth Rates collected from CDC Vital Statistics Births Reports for 2015, 2019, and 2020.") +
+  theme_classic()
+```
+
+# 낙태법 시행일, 법적으로 진행된 일, economic crisis other than great recession 
+```{r}
+#| echo: false
+#| eval: true
+#| warning: false
+#| message: false
+#| label: fig-bratepop-graph
 #| fig-cap: "Trends in Birth Rates by Population Subgroup"
+
 # Load necessary libraries
 library(ggplot2)
 library(gridExtra)
@@ -125,6 +156,10 @@ plot(graph_B)
 plot(graph_C)
 
 ```
+# 낙태법 적용 나이, 히스패닉과 아프리칸, 서양인들의 종교적 문화 차이-whether they accept the abortion or not, cultural perspectives, whether marriage affects the decision of keeping a child or not.<- financial reason 
+
+# map
+
 
 ## Methodology
 
