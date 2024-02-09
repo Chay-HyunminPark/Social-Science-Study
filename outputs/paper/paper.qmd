@@ -33,46 +33,9 @@ library(palmerpenguins)
 #| echo: false
 #| eval: true
 #| warning: false
-#| label: fig-usbrate-graph
-#| fig-cap: "Trend in US Birth Rates"
-
-# Load necessary libraries
-library(ggplot2)
-
-# Set seed for reproducibility
-set.seed(123)
-
-# Read the data from CSV file
-data <- read.csv(file = here::here("outputs/data/fig_1.csv"))
-
-# Plotting the data
-ggplot(data, aes(x = year, y = brate_all)) +
-  geom_line(color = "blue") +
-  geom_vline(xintercept = 2007, linetype = "dotted") +
-  annotate("text", x = 2007, y = 70, label = "2007", vjust = -0.5, hjust = 0.5, color = "black", family = "Times") +
-  geom_hline(yintercept = seq(50, 80, by = 5), color = "lightgrey") +
-  scale_y_continuous(limits = c(50, 80), breaks = seq(50, 80, by = 5)) +
-  scale_x_continuous(limits = c(1980, 2020), breaks = seq(1980, 2020, by = 1), labels = function(x) ifelse(x %% 5 == 0, x, "")) +
-  labs(x = "Year", y = "Births per 1,000 women age 15-44",
-       title = "Trend in US Birth Rates",
-       caption = "Birth Rates collected from CDC Vital Statistics Births Reports for 2015, 2019, and 2020.", family = "Times") +
-  theme_classic()
-
-```
-
-
-```{r}
-#| echo: false
-#| eval: true
-#| warning: false
 #| message: false
 #| label: fig-bratetrend-graph
 #| fig-cap: "Trends in Birth Rates by Population Subgroup"
-
-#### Figure 2 ####
-
-#### ####
-
 # Load necessary libraries
 library(ggplot2)
 library(gridExtra)
@@ -85,12 +48,12 @@ data <- read.csv(file = here::here("outputs/data/figs_2a_2b.csv"))
 
 # Plotting the first line graph (Graph A)
 graph_A <- ggplot(data, aes(x = year)) +
-  geom_line(aes(y = brate_1519, color = "blue"), size = 1.0) +
-  geom_line(aes(y = brate_2024, color = "orange"), size = 1.0) +
-  geom_line(aes(y = brate_2529, color = "grey"), size = 1.0) +
-  geom_line(aes(y = brate_3034, color = "yellow"), size = 1.0) +
-  geom_line(aes(y = brate_3539, color = "cyan"), size = 1.0) +
-  geom_line(aes(y = brate_4044, color = "green"), size = 1.0) +
+  geom_line(aes(y = brate_1519, color = "blue"), size = 0.4) +
+  geom_line(aes(y = brate_2024, color = "orange"), size = 0.4) +
+  geom_line(aes(y = brate_2529, color = "grey"), size = 0.4) +
+  geom_line(aes(y = brate_3034, color = "yellow"), size = 0.4) +
+  geom_line(aes(y = brate_3539, color = "cyan"), size = 0.4) +
+  geom_line(aes(y = brate_4044, color = "green"), size = 0.4) +
   geom_text(data = data[data$year == 2020,], aes(x = year, y = brate_1519, label = "Age 15-19"), hjust = -0.1, vjust = -0.5, size = 2, family = "Times") +
   geom_text(data = data[data$year == 2020,], aes(x = year, y = brate_2024, label = "Age 20-24"), hjust = -0.1, vjust = -0.5, size = 2, family = "Times") +
   geom_text(data = data[data$year == 2020,], aes(x = year, y = brate_2529, label = "Age 25-29"), hjust = -0.1, vjust = -0.5, size = 2, family = "Times") +
@@ -108,15 +71,15 @@ graph_A <- ggplot(data, aes(x = year)) +
        caption = NULL,
        family = "Times") +
   theme_classic() +
-  theme(axis.text.x = element_text(angle = -45, hjust = 1, family = "Times"),
-        plot.title = element_text(size = 10, family = "Times"),
+  theme(axis.text.x = element_text(angle = -45, hjust = 1, family = "Times", size = 5),
+        plot.title = element_text(size = 7, family = "Times"),
         legend.position = "none")
 
 # Plotting the second line graph (Graph B)
 graph_B <- ggplot(data, aes(x = year)) +
-  geom_line(aes(y = brate_hisp, color = "grey"), size = 1.2) +
-  geom_line(aes(y = brate_blacknh, color = "orange"), size = 1.2) +
-  geom_line(aes(y = brate_whitenh, color = "blue"), size = 1.2) +
+  geom_line(aes(y = brate_hisp, color = "grey"), size = 0.6) +
+  geom_line(aes(y = brate_blacknh, color = "orange"), size = 0.6) +
+  geom_line(aes(y = brate_whitenh, color = "blue"), size = 0.6) +
   geom_text(data = data[data$year == 2020,], aes(x = year, y = brate_hisp, label = "Hispanic"), hjust = -0.1, vjust = -0.5, size = 2, family = "Times") +
   geom_text(data = data[data$year == 2020,], aes(x = year, y = brate_blacknh, label = "Black, non-Hispanic"), hjust = -0.1, vjust = -0.5, size = 2, family = "Times") +
   geom_text(data = data[data$year == 2020,], aes(x = year, y = brate_whitenh, label = "White, non-Hispanic"), hjust = -0.1, vjust = -0.5, size = 2, family = "Times") +
@@ -125,12 +88,16 @@ graph_B <- ggplot(data, aes(x = year)) +
        title = "B: Race and ethnicity (ages 15-44)",
        caption = "Birth rates by age group, race, and ethnicity, and marital status gathered from CDC Vital Statistics Births Reports. Birth rates by Hispanic subpopulation, mother's education are calculated by the original author's using NCHS Vital Statistics birth micro data, SEER population data, and the Current Population Survey.") +
   theme_classic() +
-  theme(axis.text.x = element_text(angle = -45, hjust = 1, family = "Times"),
-        plot.title = element_text(size = 10, family = "Times"),
+  theme(axis.text.x = element_text(angle = -45, hjust = 1, family = "Times", size = 5),
+        plot.title = element_text(size = 7, family = "Times"),
         legend.position = "none")
 
 # Arrange both graphs side by side
 grid.arrange(graph_A, graph_B, nrow = 1)
+
+```
+
+```{r}
 
 ```
 
