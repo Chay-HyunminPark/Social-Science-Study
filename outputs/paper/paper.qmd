@@ -29,6 +29,7 @@ library(palmerpenguins)
 
 ## Source
 
+
 ```{r}
 #| echo: false
 #| eval: true
@@ -63,7 +64,7 @@ graph_A <- ggplot(data, aes(x = year)) +
   geom_vline(xintercept = 2007, linetype = "dotted") +
   annotate("text", x = 2007, y = 120, label = "2007", vjust = -0.5, hjust = 0.5, color = "black", family = "Times") +
   geom_hline(yintercept = seq(0, 140, by = 20), color = "lightgrey") +
-  scale_y_continuous(limits = c(0, 140), breaks = seq(0, 140, by = 20), labels = NULL) +
+  scale_y_continuous(limits = c(0, 140), breaks = seq(0, 140, by = 20), labels = seq(0, 140, by = 20)) +
   scale_x_continuous(limits = c(1980, 2020), breaks = seq(1980, 2020, by = 1), labels = function(x) ifelse(x %% 5 == 0, x, "")) +
   labs(x = NULL, 
        y = 'Births per 1,000 women in relevant population subgroup',
@@ -77,14 +78,14 @@ graph_A <- ggplot(data, aes(x = year)) +
 
 # Plotting the second line graph (Graph B)
 graph_B <- ggplot(data, aes(x = year)) +
-  geom_line(aes(y = brate_hisp, color = "grey"), size = 0.6) +
-  geom_line(aes(y = brate_blacknh, color = "orange"), size = 0.6) +
-  geom_line(aes(y = brate_whitenh, color = "blue"), size = 0.6) +
-  geom_text(data = data[data$year == 2020,], aes(x = year, y = brate_hisp, label = "Hispanic"), hjust = -0.1, vjust = -0.5, size = 2, family = "Times") +
-  geom_text(data = data[data$year == 2020,], aes(x = year, y = brate_blacknh, label = "Black, non-Hispanic"), hjust = -0.1, vjust = -0.5, size = 2, family = "Times") +
-  geom_text(data = data[data$year == 2020,], aes(x = year, y = brate_whitenh, label = "White, non-Hispanic"), hjust = -0.1, vjust = -0.5, size = 2, family = "Times") +
-  geom_vline(xintercept = 2007, linetype = "dotted") + annotate("text", x = 2007, y = 120, label = "2007", vjust = -0.5, hjust = 0.5, color = "black", family = "Times") +
-  geom_hline(yintercept = seq(0, 140, by = 20), color = "lightgrey") + scale_y_continuous(limits = c(0, 140), breaks = seq(0, 140, by = 20), labels = NULL) + scale_x_continuous(limits = c(1990, 2020), breaks = seq(1990, 2020, by = 1), labels = function(x) ifelse(x %% 5 == 0, x, "")) + labs(x = NULL, y = NULL,
+  geom_line(aes(y = brate_hisp, color = "grey"), size = 0.4) +
+  geom_line(aes(y = brate_blacknh, color = "orange"), size = 0.4) +
+  geom_line(aes(y = brate_whitenh, color = "blue"), size = 0.4) +
+  geom_text(data = data[data$year == 2020,], aes(x = year, y = brate_hisp, label = "Hispanic"), size = 2, family = "Times") +
+  geom_text(data = data[data$year == 2020,], aes(x = year, y = brate_blacknh, label = "Black, non-Hispanic"), size = 2, family = "Times") +
+  geom_text(data = data[data$year == 2020,], aes(x = year, y = brate_whitenh, label = "White, non-Hispanic"), size = 2, family = "Times") +
+  geom_vline(xintercept = 2007, linetype = "dotted") + annotate("text", x = 2007, y = 120, label = "2007", color = "black", family = "Times") +
+  geom_hline(yintercept = seq(0, 140, by = 20), color = "lightgrey") + scale_y_continuous(limits = c(0, 140), breaks = seq(0, 140, by = 20), labels = seq(0, 140, by = 20)) + scale_x_continuous(limits = c(1990, 2020), breaks = seq(1990, 2020, by = 1), labels = function(x) ifelse(x %% 5 == 0, x, "")) + labs(x = NULL, y = NULL,
        title = "B: Race and ethnicity (ages 15-44)",
        caption = "Birth rates by age group, race, and ethnicity, and marital status gathered from CDC Vital Statistics Births Reports. Birth rates by Hispanic subpopulation, mother's education are calculated by the original author's using NCHS Vital Statistics birth micro data, SEER population data, and the Current Population Survey.") +
   theme_classic() +
@@ -92,15 +93,38 @@ graph_B <- ggplot(data, aes(x = year)) +
         plot.title = element_text(size = 7, family = "Times"),
         legend.position = "none")
 
-# Arrange both graphs side by side
-grid.arrange(graph_A, graph_B, nrow = 1)
+
+# Read the data from the new CSV file fig_2e
+data_2e <- read.csv(file = here::here("outputs/data/fig_2e.csv"))
+
+# Plotting the third line graph (Graph C)
+graph_C <- ggplot(data_2e, aes(x = year)) +
+  geom_line(aes(y = brate_unmarried, color = "blue"), size = 0.4) +
+  geom_line(aes(y = brate_married, color = "orange"), size = 0.4) +
+  geom_vline(xintercept = 2007, linetype = "dotted") +
+  annotate("text", x = 2007, y = 120, label = "2007", vjust = -0.5, hjust = 0.5, color = "black", family = "Times") +
+  geom_hline(yintercept = seq(0, 140, by = 20), color = "lightgrey") +
+  scale_y_continuous(limits = c(0, 140), breaks = seq(0, 140, by = 20), labels = seq(0, 140, by = 20)) +
+  scale_x_continuous(limits = c(1980, 2020), breaks = seq(1980, 2020, by = 5), labels = function(x) ifelse(x %% 5 == 0, x, "")) +
+  labs(x = NULL, 
+       y = 'Births per 1,000 women in relevant population subgroup',
+       title = "C: Marital Status",
+       caption = NULL,
+       family = "Times") +
+  theme_classic() +
+  theme(axis.text.x = element_text(angle = -45, hjust = 1, family = "Times", size = 5),
+        plot.title = element_text(size = 7, family = "Times"),
+        legend.position = "none")
+
+# divide frame in 3x1 grid
+par(mfrow = c(3,1))
+
+# draw 3 graphs
+plot(graph_A)
+plot(graph_B)
+plot(graph_C)
 
 ```
-
-```{r}
-
-```
-
 
 ## Methodology
 
