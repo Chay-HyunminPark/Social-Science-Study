@@ -269,3 +269,8 @@ It might be interesting to expand the research worldwide, not just limiting ours
 \newpage
 
 # References
+
+---
+nocite: '@*'
+---
+
