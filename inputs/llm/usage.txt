@@ -1566,6 +1566,162 @@ plot(graph_C)
 This code will position the label '2007' right next to the dotted line in each graph and ensure that the x-axis and y-axis scales have the same size.
 
 User
+From this code, 
+#| echo: false
+#| eval: true
+#| warning: false
+#| message: false
+#| label: tbl-race-table
+#| tbl-cap: "Race and ethinicity (ages 15-44)"
+
+#### Table 1a ####
+# Count the number of births per 1,000 women in relevant population subgroup by their race and ethinicity in the ages cohort from 15 to 44. 
+#### ####
+
+# Install the necessary packages if not already installed
+install.packages(c("knitr","lubridate","tidyverse","kableExtra"))
+
+# Load required libraries
+library(dplyr)
+library(knitr)
+library(lubridate)
+library(tidyverse)
+library(kableExtra)
+
+# Read the data from CSV file
+data <- read.csv(file = here::here("outputs/data/figs_2a_2b.csv"))
+
+# Filter the data to include years starting from 1990
+filtered_data <- data %>%
+  filter(year >= 1990)
+
+# Select the required columns
+selected_data <- filtered_data %>%
+  select(year, brate_hisp, brate_blacknh, brate_whitenh)
+
+# Print the table using additional styling
+kable(selected_data, caption = "Trends in Birth Rates by Population Race and Ethnicity (ages 15-44)", format = "html") %>%
+  kable_styling(full_width = FALSE) %>%
+  add_header_above(c("","Births per 1,000 women" = 3))
+
+I want to modify such that I can rename the column names as such
+
+year -> Year
+brate_whitenh -> White
+brate_blacknh -> Black
+brate_hisp -> Hispanic
 
 ChatGPT
+Sure, you can rename the column names using the `rename()` function from the `dplyr` package. Here's the modified script with the column names renamed as requested:
+
+```R
+# Load necessary libraries
+library(dplyr)
+library(knitr)
+library(kableExtra)
+
+# Read the data from CSV file
+data <- read.csv(file = here::here("outputs/data/figs_2a_2b.csv"))
+
+# Filter the data to include years starting from 1990
+filtered_data <- data %>%
+  filter(year >= 1990)
+
+# Select the required columns and rename them
+selected_data <- filtered_data %>%
+  select(Year = year, White = brate_whitenh, Black = brate_blacknh, Hispanic = brate_hisp)
+
+# Print the table using additional styling
+kable(selected_data, caption = "Trends in Birth Rates by Population Race and Ethnicity (ages 15-44)", format = "html") %>%
+  kable_styling(full_width = FALSE) %>%
+  add_header_above(c("","Births per 1,000 women" = 3))
+```
+
+This script will generate a table with the specified column names: Year, White, Black, and Hispanic. Make sure to replace `"outputs/data/figs_2a_2b.csv"` with the correct file path if it's located in a different directory.
+
+User
+make the histogram based on the table we just created.
+
+ChatGPT
+To create a histogram based on the table we just created, we can use the `ggplot2` library in R. Here's how you can do it:
+
+```R
+# Load necessary libraries
+library(ggplot2)
+
+# Define the data for the histogram
+hist_data <- selected_data %>%
+  select(White, Black, Hispanic) %>%
+  pivot_longer(cols = c(White, Black, Hispanic), names_to = "Race", values_to = "Births_per_1000_women")
+
+# Create the histogram
+ggplot(hist_data, aes(x = Births_per_1000_women, fill = Race)) +
+  geom_histogram(binwidth = 10, position = "dodge", color = "black", alpha = 0.7) +
+  labs(title = "Histogram of Birth Rates by Population Race and Ethnicity (ages 15-44)",
+       x = "Births per 1,000 women",
+       y = "Frequency") +
+  scale_fill_manual(values = c("White" = "blue", "Black" = "red", "Hispanic" = "green")) +
+  theme_minimal()
+```
+
+This code will generate a histogram where each bar represents the frequency of birth rates for each racial/ethnic group (White, Black, Hispanic) in the selected_data table. Adjust the `binwidth` parameter in the `geom_histogram` function to change the width of the bins if needed.
+
+User
+From this code,
+# Load required libraries
+library(dplyr)
+library(ggplot2)
+
+# Refer to the pivoted table from table 1a
+
+# Create bar graphs for each age group
+bar_plot <- ggplot(selected_data, aes(x = Year)) +
+  geom_bar(aes(y = Hispanic, fill = "Hispanic"), stat = "identity", position = "stack") +
+  geom_bar(aes(y = Black, fill = "Black"), stat = "identity", position = "stack") +
+  geom_bar(aes(y = White, fill = "White"), stat = "identity", position = "stack") +
+  labs(x = "Year",
+       y = "Births per 1,000 women") +
+  scale_fill_manual(values = c(Hispanic = "grey", Black = "orange", White = "blue"),
+                    name = "Age Group") +
+  theme_minimal() +
+  scale_x_continuous(breaks = seq(1990, 2020, by = 1))
+
+# Print the bar plot
+print(bar_plot)
+
+only mark every 5 years for instance, 1990, 1995, 2000. Still keep the scale for each year. 
+
+User
+have the scale from 0 to 140 for the y-axis from this code,
+#| echo: false
+#| eval: true
+#| warning: false
+#| message: false
+#| label: fig-trendssub-graph
+#| fig-cap: "Trends in Birth Rates by Population Race and Ethnicity"
+
+# Load required libraries
+library(dplyr)
+library(ggplot2)
+
+# Refer to the pivoted table from Table 1a
+# Assume selected_data contains the relevant data
+
+# Create bar graphs for each racial/ethnic group
+bar_plot <- ggplot(selected_data, aes(x = Year)) +
+  geom_bar(aes(y = Hispanic, fill = "Hispanic"), stat = "identity", position = "stack") +
+  geom_bar(aes(y = Black, fill = "Black"), stat = "identity", position = "stack") +
+  geom_bar(aes(y = White, fill = "White"), stat = "identity", position = "stack") +
+  labs(x = "Year",
+       y = "Births per 1,000 women") +
+  scale_fill_manual(values = c(Hispanic = "grey", Black = "orange", White = "blue"),
+                    name = "Race and ethnicity") +
+  theme_classic() +
+  scale_x_continuous(breaks = seq(1990, 2020, by = 5), minor_breaks = seq(1990, 2020, by = 1))
+
+# Print the bar plot
+print(bar_plot)
+
+ChatGPT
+
 
