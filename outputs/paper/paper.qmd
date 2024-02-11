@@ -6,7 +6,7 @@ author:
 thanks: "Code and data are available at: https://github.com/Chay-HyunminPark/Social-Science-Study."
 date: today
 date-format: long
-abstract: "Decreasing birth rates became the conversation topic globally in recent years. Kearney, Levine, and Pardue (2022) analyzed possible factors in demographical, economical and social aspects from the period 1980 to 2020. By reproducing some applications of the 'The Puzzle of Falling US Birth Rates Since the Great Recession,' this paper demonstrate potential factors correlating aspects on economics, religions, laws and enforcement applied in each states."
+abstract: "This paper investigates the significant decline in US birth rates between 2007 and 2020, replicating the study by Kearney, Levine, and Pardue (2022). Analyzing trends from 1980 to 2020, we explore variations in birth rates across age groups and disparities based on the race and ethnicity of mothers. While attributing the initial decline to the Great Recession, our analysis identifies unclear factors beyond this period. Furthermore, our exploration delves into socio-cultural aspects, providing an understanding of declining birth rates and contributing insights for policymakers and researchers concerned with population trends."
 format: pdf
 number-sections: true
 bibliography: references.bib
@@ -47,7 +47,8 @@ The original code in the replication package is written in Stata. However, this 
 # Data {#sec-data}
 
 ## Methodology
-The data for the trend in US Birth Rates, births per 1,000 women age 15-44 from the period 1980 to 2020 was acquired from CDC Vital Statistics Births Reports for 2015, 2019 and 2020 (Martin and Mathews 2017; Martin and Driscoll 2021; Hamilton and Osterman 2021). Another trends in Birth Rates by Population Subgroup, specifically birth rates by age group, race and ethnicity are again gathered from CDC Vital Statistics Births Reports. Original paper uses single-age population counts, among all races from 1969-2019 and by race and Hispanic origin from 1990-2019, from the CDC SEER database (CDC NCI 2021). Data is available freely at https://seer.cancer.gov/popdata/download.html and raw files can be found in the data/pop/folder of the original replication package.
+
+The data concerning the trend in US Birth Rates, measured as births per 1,000 women aged 15-44 from the period 1980 to 2020, was sourced from the CDC Vital Statistics Births Reports for the years 2015, 2019, and 2020 (Martin and Mathews 2017; Martin and Driscoll 2021; Hamilton and Osterman 2021). Additionally, trends in Birth Rates by Population Subgroup, specifically birth rates categorized by age group, race, and ethnicity, were again gathered from CDC Vital Statistics Births Reports. The original paper utilized single-age population counts across all races from 1969 to 2019 and by race and Hispanic origin from 1990 to 2019, sourced from the CDC SEER database (CDC NCI 2021). The data is freely available at https://seer.cancer.gov/popdata/download.html, with raw files located in the data/pop/ folder of the original replication package.
 
 ## Features
 From now on, every white refers to non-Hispanic, caucassian. Every black refers to non-Hispanic, African American. Hispanic refers to people with Hispanic ethinicity majority from south America. 
