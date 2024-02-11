@@ -32,12 +32,7 @@ library(palmerpenguins)
 6) why it is important - replacement level fertility
 7) the structure of the paper - 1. trend in US Birth Rates 2. Trends in Birth Rates by Population Subgroup 2.1 Five-year age group 2.2 Race and ethinicity 
 
-In an economical aspect, birth rates are important factor that decides the growth of a country. 
-The paper is about the factors that was not discussed in the Kearney's paper. They pointed out that as of 2007, the Great Recession, was the turning point of declining tendency in birth rates, however, it is beyond just demographical, economical, social and political factors. In this paper we will 
-
-Over the 40 years,
-
-According to the Centers for Disease Control and Prevention, birth rate is defined as "the number of live births per 1,000 population." It is calculated by dividing the number of live births in a population in a year by the midyear resident population. More specifically, for census years, rates are based on unrounded census counts of the resident population as of April 1. For the noncensus years 1981 - 1989, rates are based on the midyear resident population, rounded to thousands (National Center for Health Statistics 2023). In an economical aspect, birth rates are an important factor that decides the growth of a country. In recent years, low birth rate became a conversation topic both nation-wide and worldwide. Many countries are rising this issue of declining birth rates and posing alternative measures to compensate the population drop. For instance, 
+According to the Centers for Disease Control and Prevention, birth rate is defined as "the number of live births per 1,000 population." It is calculated by dividing the number of live births in a population in a year by the midyear resident population. More specifically, for census years, rates are based on unrounded census counts of the resident population as of April 1. For the noncensus years 1981 - 1989, rates are based on the midyear resident population, rounded to thousands (National Center for Health Statistics 2023). In an economical aspect, birth rates are an important factor that decides the growth of a country. In recent years, low birth rate became a conversation topic both nation-wide and worldwide. Many countries are rising this issue of declining birth rates and posing alternative measures to compensate the population drop. For instance, Germany birth rate (births per 1000 people) in 2024 hits 9.3 which is lower than Canada 10.0 and the US 12.0 (). Germany takes an action to actively recruiting skilled workers from abroad and reforming its citizenship law by allowing dual citizenship
 
 * what was done, why and what was found, 3-4 paragraphs
 
