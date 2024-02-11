@@ -125,7 +125,9 @@ ggplot(data, aes(x = year, y = brate_all)) +
 ## Trends in Birth Rates by Population Subgroup
 Trends in Birth Rates by Population Subgroup has two panels specified into two: Group A is designated to five-year age group and Group B is designed to illustrate race and ethnicity (ages 15-44).
 
-Both plots present the year on the x-axis and births per 1,000 women in relevant population subgroup in the y-axis. For group A, we have 6 different lines to grop the five-year age group of women from the age 15 to 44. Again, the Great Recession is marked as a dotted vertical line on both panels. While it is generally true that the birth rates drop significantly as of 2007 for the women population group at age between 15 to 29, the elder group at age over 30 shows ascending trends over the year. 
+Both plots present the year on the x-axis and births per 1,000 women in relevant population subgroup in the y-axis. For group A, we have 6 different lines to grop the five-year age group of women from the age 15 to 44. Again, the Great Recession is marked as a dotted vertical line on both panels. While it is generally true that the birth rates drop significantly as of 2007 for the women population group at age between 15 to 29, the elder group at age over 30 shows ascending trends over the year regardless of the event. Also, the age group 15-29 seems to be following downward slope from 1980 until it hits its maximum in 1991. 
+
+In panel B of @fig-bratepop-graph has three different subgroups. Race and ethnicity is subdivided into three sections, Hispanic, Black, and White. Both white and black are non-Hispanic population.
 
 ```{r}
 #| echo: false
@@ -203,6 +205,7 @@ grid.arrange(graph_A, graph_B, nrow = 1)
 In panel A of @fig-bratepop-graph can be interpreted as the proportion of US women using a contraceptive method rose from 56% in 1982 to 60% in 1988 and 64% in 1995. This trends in contraceptive use have implications for downward shifts in preganancy rates which ultimately affects birth rates (Piccinino and Mosher 1998). 
 Moreover, states began to pass parental involvement laws to limit minors' confidential access to abortion (Myers 2022). Meaning that although by 1980 judicial precedent established that minors can consent to abortion services absent a valid restriction, as of 1980, minors had a limitation on abortion which possibly draw correlation between the more usage in contraceptive measurements to prevent the pregnancy.
 
+According to population and development review, 
 
 As a result, legal access to abortion and contraceptive in the 1960s and 
 
