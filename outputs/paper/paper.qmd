@@ -58,7 +58,7 @@ For the race and ethnicity, every white refers to non-Hispanic, caucassian popul
 # Results
 
 ## Trend in US Birth Rates
-The overall trend fluctuates over time, with the highest number of births recorded in 1990 at a rate of 70.9. The second-highest peaks occurred in 1991 and 2007, with rates of 69.3. These peaks are accompanied by valleys. However, the difference between the birth rates in 1980 and 2020 is 12.6, and the gap between the maximum and minimum points during this period is 15.1. These calculations clearly demonstrate the variation over time and suggest that there may be factors influencing the gradual negative slope of the trend. Figure 2 presents the scatter plot version of Figure 1, providing a clearer representation of the negative trend observed in the line graph.
+The overall trend fluctuates over time, with the highest number of births recorded in 1990 at a rate of 70.9. The second-highest peaks occurred in 1991 and 2007, with rates of 69.3. These peaks are accompanied by valleys. However, the difference between the birth rates in 1980 and 2020 is 12.6, and the gap between the maximum and minimum points during this period is 15.1. These calculations clearly demonstrate the variation over time and suggest that there may be factors influencing the gradual negative slope of the trend. Figure 2 presents the scatter plot version of Figure 1, providing a clearer representation of the negative trend observed in the line graph. Lastly, the year 2007 has been marked in dotted line to signify the beginning of the fall on both graphs.
 
 ```{r}
 #| echo: false
@@ -123,6 +123,10 @@ ggplot(data, aes(x = year, y = brate_all)) +
 ```
 
 ## Trends in Birth Rates by Population Subgroup
+Trends in Birth Rates by Population Subgroup has two panels specified into two: Group A is designated to five-year age group and Group B is designed to illustrate race and ethnicity (ages 15-44).
+
+Both plots present the year on the x-axis and births per 1,000 women in relevant population subgroup in the y-axis. For group A, we have 6 different lines to grop the five-year age group of women from the age 15 to 44. Again, the Great Recession is marked as a dotted vertical line on both panels. While it is generally true that the birth rates drop significantly as of 2007 for the women population group at age between 15 to 29, the elder group at age over 30 shows ascending trends over the year.
+
 
 ```{r}
 #| echo: false
