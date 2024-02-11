@@ -125,8 +125,7 @@ ggplot(data, aes(x = year, y = brate_all)) +
 ## Trends in Birth Rates by Population Subgroup
 Trends in Birth Rates by Population Subgroup has two panels specified into two: Group A is designated to five-year age group and Group B is designed to illustrate race and ethnicity (ages 15-44).
 
-Both plots present the year on the x-axis and births per 1,000 women in relevant population subgroup in the y-axis. For group A, we have 6 different lines to grop the five-year age group of women from the age 15 to 44. Again, the Great Recession is marked as a dotted vertical line on both panels. While it is generally true that the birth rates drop significantly as of 2007 for the women population group at age between 15 to 29, the elder group at age over 30 shows ascending trends over the year.
-
+Both plots present the year on the x-axis and births per 1,000 women in relevant population subgroup in the y-axis. For group A, we have 6 different lines to grop the five-year age group of women from the age 15 to 44. Again, the Great Recession is marked as a dotted vertical line on both panels. While it is generally true that the birth rates drop significantly as of 2007 for the women population group at age between 15 to 29, the elder group at age over 30 shows ascending trends over the year. 
 
 ```{r}
 #| echo: false
@@ -195,74 +194,19 @@ graph_B <- ggplot(data, aes(x = year)) +
 grid.arrange(graph_A, graph_B, nrow = 1)
 
 ```
-Figure 2 A, abortion law applicable age ~,
-
-Technology enhancement in medical field allows the abortion to be held more easily compared to 1980, 1990s. This change allow the young women who can afford the abortion or vice versa who can't afford giving birth to get the abortion. In the meantime, due to the advancement of technology, women at relatively old age can give the birth in their late 30s or even 40s. As well as change in child birth policy and health maintenance was eased compared to the old days in 1980s, 1990s, that promotes women at age older than 30 who are relatively financially stable have high willingness to give births, showing ascending pattern in birth rates over the 40 years. 
-
-```{r}
-#| echo: false
-#| eval: true
-#| warning: false
-#| message: false
-#| label: tbl-trendssub-table
-#| tbl-cap: "Trends in Birth Rates by Population Race and Ethnicity"
-
-# Load necessary libraries
-library(dplyr)
-library(knitr)
-library(kableExtra)
-
-# Read the data from CSV file
-data <- read.csv(file = here::here("outputs/data/figs_2a_2b.csv"))
-
-# Filter the data to include years starting from 1990
-filtered_data <- data %>%
-  filter(year >= 1990)
-
-# Select the required columns and rename them
-selected_data <- filtered_data %>%
-  select(Year = year, White = brate_whitenh, Black = brate_blacknh, Hispanic = brate_hisp)
-
-# Print the table using additional styling
-kable(selected_data, caption = "Trends in Birth Rates by Population Race and Ethnicity (ages 15-44)", format = "html") %>%
-  kable_styling(full_width = FALSE) %>%
-  add_header_above(c("","Births per 1,000 women" = 3))
-
-```
 
 
-```{r}
-#| echo: false
-#| eval: true
-#| warning: false
-#| message: false
-#| label: fig-trendssub-graph
-#| fig-cap: "Trends in Birth Rates by Population Race and Ethnicity"
+# Discussion
 
-# Load required libraries
-library(dplyr)
-library(ggplot2)
+## Findings
 
-# Refer to the table a
-# Assume selected_data contains the relevant data
+In panel A of @fig-bratepop-graph can be interpreted as the proportion of US women using a contraceptive method rose from 56% in 1982 to 60% in 1988 and 64% in 1995. This trends in contraceptive use have implications for downward shifts in preganancy rates which ultimately affects birth rates (Piccinino and Mosher 1998). 
+Moreover, states began to pass parental involvement laws to limit minors' confidential access to abortion (Myers 2022). Meaning that although by 1980 judicial precedent established that minors can consent to abortion services absent a valid restriction, as of 1980, minors had a limitation on abortion which possibly draw correlation between the more usage in contraceptive measurements to prevent the pregnancy.
 
-# Create bar graphs for each racial/ethnic group
-bar_plot <- ggplot(selected_data, aes(x = Year)) +
-  geom_bar(aes(y = Hispanic, fill = "Hispanic"), stat = "identity", position = "stack") +
-  geom_bar(aes(y = Black, fill = "Black"), stat = "identity", position = "stack") +
-  geom_bar(aes(y = White, fill = "White"), stat = "identity", position = "stack") +
-  labs(x = "Year",
-       y = "Births per 1,000 women relevant population subgroup") +
-  scale_fill_manual(values = c(Hispanic = "grey", Black = "orange", White = "blue"),
-                    name = "Race and ethnicity") +
-  theme_minimal() +
-  scale_x_continuous(breaks = seq(1990, 2020, by = 5), minor_breaks = seq(1990, 2020, by = 1)) +
-  ylim(0, 120)
 
-# Print the bar plot
-print(bar_plot)
-```
-Figure 3 B, major religion of Hispanic, Black, White  religious reason of each race and ethnicity.
+As a result, legal access to abortion and contraceptive in the 1960s and 
+
+In panel B of @fig-bratepop-graph, major religion of Hispanic, Black, White  religious reason of each race and ethnicity.
 
 Here we are dissecting the cultural and religious difference between the races among the population subgroup. 
 Hispanic, majority catholic,
@@ -272,17 +216,6 @@ Black, christian, catholic, etc
 It is prevailed that certain religion does not allow the abortion, saying that it disobey the words of God or whatever. 
 
 -whether they accept the abortion or not, cultural perspectives, whether marriage affects the decision of keeping a child or not.<- financial reason 
-
-Might include Map or not depending on the sources and references I find, see how long it'll gonna be.
-
-# Discussion
-
-Figure 1 Trend in US Birth Rates, not just the Great Recession was there another events? 
-abortion law, law enforcement dates, economic crisis other than great recession 
-
-## Findings
-
-If my paper were 10 pages, then should be be at least 2.5 pages. The discussion is a chance to show off what you know and what you learnt from all this. 
 
 ## Ethical Implication
 
