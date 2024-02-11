@@ -51,14 +51,17 @@ The original code in the replication package is written in Stata. However, this 
 The data concerning the trend in US Birth Rates, measured as births per 1,000 women aged 15-44 from the period 1980 to 2020, was sourced from the CDC Vital Statistics Births Reports for the years 2015, 2019, and 2020 (Martin and Mathews 2017; Martin and Driscoll 2021; Hamilton and Osterman 2021). Additionally, trends in Birth Rates by Population Subgroup, specifically birth rates categorized by age group, race, and ethnicity, were again gathered from CDC Vital Statistics Births Reports. The original paper utilized single-age population counts across all races from 1969 to 2019 and by race and Hispanic origin from 1990 to 2019, sourced from the CDC SEER database (CDC NCI 2021). The data is freely available at https://seer.cancer.gov/popdata/download.html, with raw files located in the data/pop/ folder of the original replication package.
 
 ## Features
-From now on, every white refers to non-Hispanic, caucassian. Every black refers to non-Hispanic, African American. Hispanic refers to people with Hispanic ethinicity majority from south America. 
+De facto population of women of reproductive age is 15 to 49 years in a country (WHO 2024). The average age of the final menstrual period (menopause) is age 51, women age in 40s, pregnancy is rare but not impossible (asrm 2012). Beginning in 1997, the birth rate for the maternal age group 45-49 includes data for mothers aged 45 and over in the numerator and is based on the population of women aged 45-49 in the denominator (National Center for Health Statistics 2023). Thus the women population in the age group 45-49 is eliminated in this paper although they fall under the reproductive age group category in a country. Birth data is comprised of births per 1,000 women age 15 to 44 over the 40 years period from 1980 to 2020.
+For the race and ethnicity, every white refers to non-Hispanic, caucassian population group. Every black refers to non-Hispanic, African American group. Hispanic refers to people with Hispanic ethinicity majority from south America to abberiviate. 
 
 
 # Results
-The results section should convey findings.
-## Table, graph, table, graph
 
-## Source
+## Trend in US Birth Rates
+The overall trend fluctuates from time to time but the highest births moment is recorded as in 1991 for the rate of 71
+
+## Trends in Birth Rates by Population Subgroup
+
 ```{r}
 #| echo: false
 #| eval: true
@@ -255,8 +258,6 @@ If my paper were 10 pages, then should be be at least 2.5 pages. The discussion 
 Beginning in 1997, the birth rate for the maternal age group 45-49 includes data for mothers aged 45 and over in the numerator and is based on the population of women aged 45-49 in the denominator (National Center for Health Statistics 2023). However as the dataset is missing for the population of women aged 45-49 before 1997 and the paper counts the data from the period 1980 to 2020, the women population in the age group 45-49 is eliminated.
 
 As mentioned in the original paper, the population subgroup can be diverged as they mix over the time. It is hard to sort out the race completely once they start to mixing it up. Therefore, over the time, we don't know the population subgroup Hispanic, Black, White are purely Hispanic, Black, White throughout the period. 
-
-Also, we should not disregard the fact that for all statistical data, they always going to be a missing value that is not properly collected. A lot of people might not just report or illegally keep the population due to their illegal status in the US. 
 
 Therefore, the data might be skewed due to aforementioned reasons. 
 
