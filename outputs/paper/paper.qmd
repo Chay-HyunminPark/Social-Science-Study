@@ -90,6 +90,31 @@ ggplot(data, aes(x = year, y = brate_all)) +
   theme_classic()
 ```
 
+```{r}
+# Load necessary libraries
+library(ggplot2)
+
+# Set seed for reproducibility
+set.seed(123)
+
+# Read the data from CSV file
+data <- read.csv(file = here::here("outputs/data/fig_1.csv"))
+
+# Plotting the data with scatter plot and trend line
+ggplot(data, aes(x = year, y = brate_all)) +
+  geom_point(color = "blue") +
+  geom_smooth(method = "lm", se = FALSE, color = "red") +
+  geom_vline(xintercept = 2007, linetype = "dotted") +
+  annotate("text", x = 2009, y = 70, label = "2007", vjust = -0.5, hjust = 0.5, color = "black") +
+  geom_hline(yintercept = seq(50, 80, by = 5), color = "lightgrey") +
+  scale_y_continuous(limits = c(50, 80), breaks = seq(50, 80, by = 5)) +
+  scale_x_continuous(limits = c(1980, 2020), breaks = seq(1980, 2020, by = 1), labels = function(x) ifelse(x %% 5 == 0, x, "")) +
+  labs(x = "Year", y = "Births per 1,000 women age 15-44",
+       caption = "Source: Birth Rates collected from CDC Vital Statistics Births Reports for 2015, 2019, and 2020.") +
+  theme_classic()
+
+```
+
 Figure 1 Trend in US Birth Rates, not just the Great Recession was there another events? 
 abortion law, law enforcement dates, economic crisis other than great recession 
 
