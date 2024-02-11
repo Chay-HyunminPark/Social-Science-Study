@@ -22,19 +22,17 @@ library(tidyverse)
 library(palmerpenguins)
 ```
 
-
 # Introduction
-1) broader context to motivate
-2) some detail about what the paper is about
-3) a clear gap that needs to be filled
-4) what was done
-5) what was found
-6) why it is important - replacement level fertility
-7) the structure of the paper - 1. trend in US Birth Rates 2. Trends in Birth Rates by Population Subgroup 2.1 Five-year age group 2.2 Race and ethinicity 
 
-According to the Centers for Disease Control and Prevention, birth rate is defined as "the number of live births per 1,000 population." It is calculated by dividing the number of live births in a population in a year by the midyear resident population. More specifically, for census years, rates are based on unrounded census counts of the resident population as of April 1. For the noncensus years 1981 - 1989, rates are based on the midyear resident population, rounded to thousands (National Center for Health Statistics 2023). In an economical aspect, birth rates are an important factor that decides the growth of a country. In recent years, low birth rate became a conversation topic both nation-wide and worldwide. Many countries are rising this issue of declining birth rates and posing alternative measures to compensate the population drop. For instance, Germany birth rate (births per 1000 people) in 2024 hits 9.3 which is lower than Canada 10.0 and the US 12.0 (). Germany takes an action to actively recruiting skilled workers from abroad and reforming its citizenship law by allowing dual citizenship
+According to the Centers for Disease Control and Prevention, birth rate is defined as "the number of live births per 1,000 population." It is calculated by dividing the number of live births in a population in a year by the midyear resident population. More specifically, for census years, rates are based on unrounded census counts of the resident population as of April 1. For the noncensus years 1981 - 1989, rates are based on the midyear resident population, rounded to thousands (National Center for Health Statistics 2023). In an economical aspect, birth rates are an important factor that decides the growth of a country. In recent years, low birth rate became a conversation topic both nation-wide and worldwide. Many countries are rising this issue of declining birth rates and posing alternative measures to compensate the population drop. For instance, Germany birth rate (births per 1000 people) in 2024 hits 9.3 which is lower than Canada 10.0 and the US 12.0 (Macrotrends 2024). Germany takes an action to actively recruiting skilled workers from abroad (Grunau 2023) and reforming its citizenship law by allowing dual citizenship (Knight 2024) as some measures to the declining birth rates and overall population. Last but not least, birth rate also indicates the replacement level fertility meaning that the level of fertility at which a population exactly replaces itself from one generation to the next. In developed countries, replacement level fertility can be taken as requiring an average of 2.1 children per woman (Craig 1994). Thus, it is a matter of time that birth rates becomes a key topic globally in mid to long term.
 
-* what was done, why and what was found, 3-4 paragraphs
+Two economists, Melissa S.Kearney, Phillip B.Levine and a PhD Candidate in Economics, Luke Pardue wrote a paper about the dramatic decline in birth rates in the United States between 2007 and 2020 and suggest possible reasonings. They presented the overall reduction in the birth rate among the population groups of women, including teens, Hispanic women, and college-educated white women. They suggested the Great Recession was the main reasoning of the decline in the early part of the period between 2007 and 2020, however they were unable to identify any other economic, policy, or social factor that has changed since 2007 which support the decline beyond the Great Recession (Kearney, Levine, and Pardue 2022). The purpose of this paper is to replicate the figures and the tables from the original paper and be able to find out further reasonings of declining birth rates in the US. Beyond the Great Recession, this paper diverge the perspectives in population subgroups and dissect more in five-year age group and race and ethnicity group in depth.  
+
+This paper used a replication package of the original and utilized cleaned data CSV file to reproduce the related figures and tables. In which allow to draw the correlation of the data set with political, economical, social policy measures that was not covered in the original paper. Furthermore, this paper investigates some socio-cultural aspects including sexual education, marriage population, financial stability of the elder women at the age of over 30, and the technology in healthcare. 
+-what was found-
+
+First, the paper showcases the trend in the US Birth Rates and discuss the relevant factors along with the figure. Then it demonstrate trends in birth rates by population subgroup. The focused population subgroups are 1.Five-year age group 2 Race and ethinicity. Along with the graphs and tables, the paper correlates various aspects including education, socio-economic, finance and take them into account to explain the declining birth rates. 
+
 
 We replicate the paper by Kearney, Levine, and Pardue (2022) with a focus on the following research questions: 
 
