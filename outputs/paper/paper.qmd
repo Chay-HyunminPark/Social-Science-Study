@@ -58,9 +58,7 @@ For the race and ethnicity, every white refers to non-Hispanic, caucassian popul
 # Results
 
 ## Trend in US Birth Rates
-The overall trend fluctuates from time to time but the highest births moment is recorded as in 1991 for the rate of 71
-
-## Trends in Birth Rates by Population Subgroup
+The overall trend fluctuates over time, with the highest number of births recorded in 1990 at a rate of 70.9. The second-highest peaks occurred in 1991 and 2007, with rates of 69.3. These peaks are accompanied by valleys. However, the difference between the birth rates in 1980 and 2020 is 12.6, and the gap between the maximum and minimum points during this period is 15.1. These calculations clearly demonstrate the variation over time and suggest that there may be factors influencing the gradual negative slope of the trend. Figure 2 presents the scatter plot version of Figure 1, providing a clearer representation of the negative trend observed in the line graph.
 
 ```{r}
 #| echo: false
@@ -112,8 +110,8 @@ data <- read.csv(file = here::here("outputs/data/fig_1.csv"))
 
 # Plotting the data with scatter plot and trend line
 ggplot(data, aes(x = year, y = brate_all)) +
-  geom_point(color = "blue") +
-  geom_smooth(method = "lm", se = FALSE, color = "red") +
+  geom_point(color = "skyblue") +
+  geom_smooth(method = "lm", se = FALSE, color = "pink") +
   geom_vline(xintercept = 2007, linetype = "dotted") +
   annotate("text", x = 2009, y = 70, label = "2007", vjust = -0.5, hjust = 0.5, color = "black") +
   geom_hline(yintercept = seq(50, 80, by = 5), color = "lightgrey") +
@@ -122,11 +120,9 @@ ggplot(data, aes(x = year, y = brate_all)) +
   labs(x = "Year", y = "Births per 1,000 women age 15-44",
        caption = "Source: Birth Rates collected from CDC Vital Statistics Births Reports for 2015, 2019, and 2020.") +
   theme_classic()
-
 ```
 
-Figure 1 Trend in US Birth Rates, not just the Great Recession was there another events? 
-abortion law, law enforcement dates, economic crisis other than great recession 
+## Trends in Birth Rates by Population Subgroup
 
 ```{r}
 #| echo: false
@@ -230,6 +226,7 @@ kable(selected_data, caption = "Trends in Birth Rates by Population Race and Eth
 
 ```
 
+
 ```{r}
 #| echo: false
 #| eval: true
@@ -276,7 +273,8 @@ Might include Map or not depending on the sources and references I find, see how
 
 # Discussion
 
-In the discussion section, and any other relevant section, please be sure to discuss ethics and bias, with reference to relevant literature.
+Figure 1 Trend in US Birth Rates, not just the Great Recession was there another events? 
+abortion law, law enforcement dates, economic crisis other than great recession 
 
 ## Findings
 
@@ -303,4 +301,3 @@ It might be interesting to expand the research worldwide, not just limiting ours
 ---
 nocite: '@*'
 ---
-
