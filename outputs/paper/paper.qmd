@@ -25,8 +25,6 @@ library(palmerpenguins)
 
 # Introduction
 1) broader context to motivate
-According to dictionary, birth rate is defined as " ."
-
 2) some detail about what the paper is about
 3) a clear gap that needs to be filled
 4) what was done
@@ -38,6 +36,8 @@ In an economical aspect, birth rates are important factor that decides the growt
 The paper is about the factors that was not discussed in the Kearney's paper. They pointed out that as of 2007, the Great Recession, was the turning point of declining tendency in birth rates, however, it is beyond just demographical, economical, social and political factors. In this paper we will 
 
 Over the 40 years,
+
+According to the Centers for Disease Control and Prevention, birth rate is defined as "the number of live births per 1,000 population." It is calculated by dividing the number of live births in a population in a year by the midyear resident population. More specifically, for census years, rates are based on unrounded census counts of the resident population as of April 1. For the noncensus years 1981 - 1989, rates are based on the midyear resident population, rounded to thousands (National Center for Health Statistics 2023). In an economical aspect, birth rates are an important factor that decides the growth of a country. In recent years, low birth rate became a conversation topic both nation-wide and worldwide. Many countries are rising this issue of declining birth rates and posing alternative measures to compensate the population drop. For instance, 
 
 * what was done, why and what was found, 3-4 paragraphs
 
@@ -58,6 +58,7 @@ The data for the trend in US Birth Rates, births per 1,000 women age 15-44 from 
 
 ## Features
 From now on, every white refers to non-Hispanic, caucassian. Every black refers to non-Hispanic, African American. Hispanic refers to people with Hispanic ethinicity majority from south America. 
+
 
 # Results
 The results section should convey findings.
@@ -257,6 +258,8 @@ If my paper were 10 pages, then should be be at least 2.5 pages. The discussion 
 ## Accounting for bias
 
 ## Limitation
+Beginning in 1997, the birth rate for the maternal age group 45-49 includes data for mothers aged 45 and over in the numerator and is based on the population of women aged 45-49 in the denominator (National Center for Health Statistics 2023). However as the dataset is missing for the population of women aged 45-49 before 1997 and the paper counts the data from the period 1980 to 2020, the women population in the age group 45-49 is eliminated.
+
 As mentioned in the original paper, the population subgroup can be diverged as they mix over the time. It is hard to sort out the race completely once they start to mixing it up. Therefore, over the time, we don't know the population subgroup Hispanic, Black, White are purely Hispanic, Black, White throughout the period. 
 
 Also, we should not disregard the fact that for all statistical data, they always going to be a missing value that is not properly collected. A lot of people might not just report or illegally keep the population due to their illegal status in the US. 
