@@ -28,7 +28,7 @@ According to the Centers for Disease Control and Prevention, the birth rate is d
 
 Two economists, Melissa S. Kearney and Phillip B. Levine, along with Luke Pardue, a PhD Candidate in Economics, authored a paper addressing the dramatic decline in birth rates in the United States between 2007 and 2020 and proposed possible explanations. They examined the overall reduction in the birth rate among various population groups of women, including teens, Hispanic women, and college-educated white women. While they attributed the main cause of the decline in the early part of the period to the Great Recession, they were unable to identify any other economic, policy, or social factors that have changed since 2007 to support the decline beyond the Great Recession (Kearney, Levine, and Pardue 2022). The objective of this paper is to replicate the figures and tables from the original study and to explore additional factors contributing to the declining birth rates in the US. In addition to examining the impact of the Great Recession, this paper delves into the perspectives of population subgroups, analyzing data in five-year age groups and by race and ethnicity to gain deeper insights.
 
-This paper utilized a replication package of the original study and employed a cleaned data CSV file to reproduce the related figures and tables. This approach enabled us to draw correlations between the dataset and 
+This paper utilized a replication package of the original study and employed a cleaned data CSV file to reproduce the related figures and tables. This approach enabled us to draw correlations between the dataset and socio-cultural asepcts including abortion, contraceptive use, financial stability, religion, culture.
 
 
 First, the paper showcases the trend in US birth rates and discusses the relevant factors along with the figure. It then demonstrates trends in birth rates by population subgroup, focusing on two key areas: five-year age groups and race and ethnicity. Alongside the graphs and tables, the paper correlates various aspects including education, socio-economic factors, and finance to explain the declining birth rates.
@@ -127,7 +127,7 @@ ggplot(data, aes(x = year, y = brate_all)) +
 #| warning: false
 #| message: false
 #| label: fig-polscatter-graph
-#| fig-cap: "Trend in US Birth Rates with political party in their presidential mandate"
+#| fig-cap: "Trend in US Birth Rates during their presidential mandate"
 
 # Load necessary libraries
 library(ggplot2)
@@ -233,7 +233,7 @@ grid.arrange(graph_A, graph_B, nrow = 1)
 
 ## Findings
 
-@fig-polscatter-graph draw multiple trend lines
+@fig-polscatter-graph draw multiple trend lines in US birth rates during their presidential mandate. It also indicates their political party, blue represents the democrat while red presents the republican. Radican drop while republican period is seen from the analysis while democrat presidential mandate period illustrates relatively moderate delicining tendency. 
 
 In panel A of @fig-bratepop-graph can be interpreted as the proportion of US women using a contraceptive method rose from 56% in 1982 to 60% in 1988 and 64% in 1995. This trends in contraceptive use have implications for downward shifts in preganancy rates which ultimately affects birth rates (Piccinino and Mosher 1998). 
 Moreover, states began to pass parental involvement laws to limit minors' confidential access to abortion (Myers 2022). Meaning that although by 1980 judicial precedent established that minors can consent to abortion services absent a valid restriction, as of 1980, minors had a limitation on abortion which possibly draw correlation between the more usage in contraceptive measurements to prevent the pregnancy.
@@ -244,8 +244,6 @@ Another interesting factor could be christianity. Including protestants and cath
 
 ## Ethical Implication
 It's important to note that beliefs and practices related to abortion, contraceptive use, and sexual activity before marriage can vary within and among different religious groups. Additionally, individual beliefs and practices may not always align perfectly with the official teachings or doctrines of a particular religious tradition.
-
-## Accounting for bias
 
 ## Limitation
 Beginning in 1997, the birth rate for the maternal age group 45-49 includes data for mothers aged 45 and over in the numerator and is based on the population of women aged 45-49 in the denominator (National Center for Health Statistics 2023). However as the dataset is missing for the population of women aged 45-49 before 1997 and the paper counts the data from the period 1980 to 2020, the women population in the age group 45-49 is eliminated.
