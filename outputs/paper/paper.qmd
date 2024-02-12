@@ -126,28 +126,6 @@ ggplot(data, aes(x = year, y = brate_all)) +
 #| eval: true
 #| warning: false
 #| message: false
-#| label: tbl-polscatter-table
-#| tbl-cap: "US presidents"
-
-# Load necessary libraries
-library(ggplot2)
-
-# Create a dataframe with information about the Presidents and their respective parties
-presidents <- data.frame(
-  president = c("Ronald Reagan", "George H. W. Bush", "Bill Clinton", "George W. Bush", "Barack Obama", "Donald Trump", "Joe Biden"),
-  party = c("Republican", "Republican", "Democratic", "Republican", "Democratic", "Republican", "Democratic"),
-  start_year = c(1981, 1989, 1993, 2001, 2009, 2017, 2021),
-  end_year = c(1989, 1993, 2001, 2009, 2017, 2021, NA) # NA for current President
-)
-
-head(presidents)
-
-```
-```{r}
-#| echo: false
-#| eval: true
-#| warning: false
-#| message: false
 #| label: fig-polscatter-graph
 #| fig-cap: "Trend in US Birth Rates with political party in their presidential mandate"
 
@@ -255,6 +233,8 @@ grid.arrange(graph_A, graph_B, nrow = 1)
 
 ## Findings
 
+@fig-polscatter-graph draw multiple trend lines
+
 In panel A of @fig-bratepop-graph can be interpreted as the proportion of US women using a contraceptive method rose from 56% in 1982 to 60% in 1988 and 64% in 1995. This trends in contraceptive use have implications for downward shifts in preganancy rates which ultimately affects birth rates (Piccinino and Mosher 1998). 
 Moreover, states began to pass parental involvement laws to limit minors' confidential access to abortion (Myers 2022). Meaning that although by 1980 judicial precedent established that minors can consent to abortion services absent a valid restriction, as of 1980, minors had a limitation on abortion which possibly draw correlation between the more usage in contraceptive measurements to prevent the pregnancy.
 
@@ -275,7 +255,7 @@ As mentioned in the original paper, the population subgroup can be diverged as t
 Therefore, the data might be skewed due to aforementioned reasons. 
 
 ## Future Research
-It might be worth investigating some other aspects of the society such as political demographic, immigration law, and enforcement. Based on trend in 
+It might be worth investigating some other aspects of the society such as political demographic, immigration law, and enforcement. Based on trend in @fig-polscatter-graph, it is worth to delve into immigration law, campaign promises for their presidential mandates.  
 
 \newpage
 
