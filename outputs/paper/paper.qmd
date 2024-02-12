@@ -204,10 +204,6 @@ grid.arrange(graph_A, graph_B, nrow = 1)
 In panel A of @fig-bratepop-graph can be interpreted as the proportion of US women using a contraceptive method rose from 56% in 1982 to 60% in 1988 and 64% in 1995. This trends in contraceptive use have implications for downward shifts in preganancy rates which ultimately affects birth rates (Piccinino and Mosher 1998). 
 Moreover, states began to pass parental involvement laws to limit minors' confidential access to abortion (Myers 2022). Meaning that although by 1980 judicial precedent established that minors can consent to abortion services absent a valid restriction, as of 1980, minors had a limitation on abortion which possibly draw correlation between the more usage in contraceptive measurements to prevent the pregnancy.
 
-According to population and development review, 
-
-As a result, legal access to abortion and contraceptive in the 1960s and 
-
 In panel B of @fig-bratepop-graph, major religion of Hispanic, Black, White  religious reason of each race and ethnicity.
 
 Here we are dissecting the cultural and religious difference between the races among the population subgroup. 
