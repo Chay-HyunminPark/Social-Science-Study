@@ -204,27 +204,9 @@ grid.arrange(graph_A, graph_B, nrow = 1)
 In panel A of @fig-bratepop-graph can be interpreted as the proportion of US women using a contraceptive method rose from 56% in 1982 to 60% in 1988 and 64% in 1995. This trends in contraceptive use have implications for downward shifts in preganancy rates which ultimately affects birth rates (Piccinino and Mosher 1998). 
 Moreover, states began to pass parental involvement laws to limit minors' confidential access to abortion (Myers 2022). Meaning that although by 1980 judicial precedent established that minors can consent to abortion services absent a valid restriction, as of 1980, minors had a limitation on abortion which possibly draw correlation between the more usage in contraceptive measurements to prevent the pregnancy.
 
-In panel B of @fig-bratepop-graph, Hispanic group 
+According to the article from the journal of the National Medical Association, many Hispanic people in the United States retain the customs and traditions of their country of origin. As a result, their use of preventive health care measures is lower than the majority of the population. Moreover, Hispanics often marry and start a family earlier than the average US citizen which corresponds higher birth rate and a higer fertility rate (number of live births per 1,000 women aged 15 to 44 years) than the average. Moreover, Hispanic culture expect women to bear children. Abortion, adoption, and artificial insemination are less acceptable to Hispanic than to the average American (Poma 1987). That explains why Hispanic births rate were much higher comopared to the other population groups in panel B of @fig-bratepop-graph.
 
-Regarding abortion, contraceptive use, and sexual activity before marriage:
-
- **White Evangelical Protestants**:
-   - Generally oppose abortion and view it as morally wrong, often advocating for anti-abortion legislation.
-   - Emphasize abstinence before marriage and may discourage or oppose contraceptive use outside of marriage.
-
- **White Mainline (Non-Evangelical) Protestants**:
-   - Views on abortion and contraceptive use may vary within this group, but tend to be less dogmatic compared to evangelical Protestants.
-   - May hold a range of views on sexual activity before marriage, with some advocating for abstinence and others accepting of premarital sexual relationships.
-
- **Black Protestants**:
-   - Views on abortion and contraceptive use may vary within this group, but many Black Protestant denominations are socially conservative and oppose abortion.
-   - Teachings on sexual activity before marriage may emphasize abstinence, although individual beliefs and practices may vary.
-
- **Hispanic Catholics**:
-   -  Official Catholic doctrine opposes abortion and teaches that life begins at conception, making abortion morally unacceptable.
-   - Contraceptive use is a topic of debate within the Catholic Church, with the official stance opposing artificial contraception, although many Catholics use contraceptives despite this teaching.
-   - Catholic teachings emphasize abstinence before marriage but recognize that many Catholics engage in premarital sexual activity.
-
+Christianity, including protestants and catholic, generally oppose the idea of abortion and view it as morally wrong. They also oppose contraceptive use outside of marriage. Religious group are socially conservative. With this religious reason behind it, the social norm was opposed to the idea of abortion, contraceptive use back in the days which is why this can be a reason why the birth rate is decreasing for all race and ethnicity groups. Shift in religious activities of young Americans. Early 1990s, about 90% of US adults identified as Christians. However, over the time, young Americans are now less likely to become or remain Christian (Pew Research Center 2022). In 2020, unaffiliated group share the greatest part of the American religious landscape in 2020 by parting 23% (PRRI 2020). 
 
 ## Ethical Implication
 It's important to note that beliefs and practices related to abortion, contraceptive use, and sexual activity before marriage can vary within and among different religious groups. Additionally, individual beliefs and practices may not always align perfectly with the official teachings or doctrines of a particular religious tradition.
@@ -239,7 +221,7 @@ As mentioned in the original paper, the population subgroup can be diverged as t
 Therefore, the data might be skewed due to aforementioned reasons. 
 
 ## Future Research
-It might be interesting to expand the research worldwide, not just limiting ourselves into the US data. It is broadly known that Chinese and Indian population are growing exponentially while the birth rate in other developed countries continue to grow small. It might be interesting to research more what's behind. 
+Political demographic, immigration law, and enforcement.
 
 \newpage
 
