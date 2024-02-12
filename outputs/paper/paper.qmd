@@ -24,13 +24,12 @@ library(palmerpenguins)
 
 # Introduction
 
-According to the Centers for Disease Control and Prevention, the birth rate is defined as "the number of live births per 1,000 population." This rate is calculated by dividing the number of live births in a population in a year by the midyear resident population. Specifically, for census years, rates are calculated based on the unrounded census counts of the resident population as of April 1st. From an economic perspective, birth rates are an important factor that determines the growth of a country. In recent years, the low birth rate has become a conversation topic both nationwide and worldwide. Many countries are addressing this issue of declining birth rates and proposing alternative measures to compensate for the population drop. For instance, Germany's birth rate (births per 1000 people) in 2024 is 9.3, which is lower than Canada's 10.0 and the US's 12.0 (Macrotrends 2024). Germany is taking action by actively recruiting skilled workers from abroad (Grunau 2023) and reforming its citizenship law to allow dual citizenship (Knight 2024) as some measures to combat declining birth rates and overall population. Finally, the birth rate also serves as an indicator of replacement level fertility, which in developed countries can be taken as requiring an average of 2.1 children per woman (Craig 1994). Therefore, birth rates are poised to become a key global topic in the mid to long term.
+According to the Centers for Disease Control and Prevention, the birth rate is defined as "the number of live births per 1,000 population." This rate is calculated by dividing the number of live births in a population in a year by the midyear resident population. Specifically, for census years, rates are calculated based on the unrounded census counts of the resident population as of April 1st. From an economic perspective, birth rates are an important factor that determines the growth of a country. In recent years, the low birth rate has become a conversation topic both nationwide and worldwide. Many countries are addressing this issue of declining birth rates and proposing alternative measures to compensate for the population drop. For instance, Germany's birth rate in 2024 is 9.3, which is lower than Canada's 10.0 and the US's 12.0 (Macrotrends 2024). Germany is taking action by actively recruiting skilled workers from abroad (Grunau 2023) and reforming its citizenship law to allow dual citizenship (Knight 2024) as some measures to combat declining birth rates and overall population. Finally, the birth rate also serves as an indicator of replacement level fertility, which in developed countries can be taken as requiring an average of 2.1 children per woman (Craig 1994). Therefore, birth rates are poised to become a key global topic in the mid to long term.
 
 Two economists, Melissa S. Kearney and Phillip B. Levine, along with Luke Pardue, a PhD Candidate in Economics, authored a paper addressing the dramatic decline in birth rates in the United States between 2007 and 2020 and proposed possible explanations. They examined the overall reduction in the birth rate among various population groups of women, including teens, Hispanic women, and college-educated white women. While they attributed the main cause of the decline in the early part of the period to the Great Recession, they were unable to identify any other economic, policy, or social factors that have changed since 2007 to support the decline beyond the Great Recession (Kearney, Levine, and Pardue 2022). The objective of this paper is to replicate the figures and tables from the original study and to explore additional factors contributing to the declining birth rates in the US. In addition to examining the impact of the Great Recession, this paper delves into the perspectives of population subgroups, analyzing data in five-year age groups and by race and ethnicity to gain deeper insights.
 
-This paper utilized a replication package of the original study and employed a cleaned data CSV file to reproduce the related figures and tables. This approach enabled us to draw correlations between the dataset and political, economic, and social policy measures that were not covered in the original paper. Furthermore, this paper investigates various socio-cultural aspects, including sexual education, marriage rates, financial stability among women over the age of 30, and the role of technology in healthcare.
+This paper utilized a replication package of the original study and employed a cleaned data CSV file to reproduce the related figures and tables. This approach enabled us to draw correlations between the dataset and 
 
--what was found-
 
 First, the paper showcases the trend in US birth rates and discusses the relevant factors along with the figure. It then demonstrates trends in birth rates by population subgroup, focusing on two key areas: five-year age groups and race and ethnicity. Alongside the graphs and tables, the paper correlates various aspects including education, socio-economic factors, and finance to explain the declining birth rates.
 
@@ -51,14 +50,14 @@ The original code in the replication package is written in Stata. However, this 
 The data concerning the trend in US Birth Rates, measured as births per 1,000 women aged 15-44 from the period 1980 to 2020, was sourced from the CDC Vital Statistics Births Reports for the years 2015, 2019, and 2020 (Martin and Mathews 2017; Martin and Driscoll 2021; Hamilton and Osterman 2021). Additionally, trends in Birth Rates by Population Subgroup, specifically birth rates categorized by age group, race, and ethnicity, were again gathered from CDC Vital Statistics Births Reports. The original paper utilized single-age population counts across all races from 1969 to 2019 and by race and Hispanic origin from 1990 to 2019, sourced from the CDC SEER database (CDC NCI 2021). The data is freely available at https://seer.cancer.gov/popdata/download.html, with raw files located in the data/pop/ folder of the original replication package.
 
 ## Features
-De facto population of women of reproductive age is 15 to 49 years in a country (WHO 2024). The average age of the final menstrual period (menopause) is age 51, women age in 40s, pregnancy is rare but not impossible (asrm 2012). Beginning in 1997, the birth rate for the maternal age group 45-49 includes data for mothers aged 45 and over in the numerator and is based on the population of women aged 45-49 in the denominator (National Center for Health Statistics 2023). Thus the women population in the age group 45-49 is eliminated in this paper although they fall under the reproductive age group category in a country. Birth data is comprised of births per 1,000 women age 15 to 44 over the 40 years period from 1980 to 2020.
+De facto population of women of reproductive age is 15 to 49 years in a country (WHO 2024). The average age of the final menstrual period (menopause) is age 51, women age in 40s, pregnancy is rare but not impossible (asrm 2012). Beginning in 1997, the birth rate for the maternal age group 45-49 includes data for mothers aged 45 and over in the numerator and is based on the population of women aged 45-49 in the denominator (National Center for Health Statistics 2023). Thus the women population in the age group 45-49 is eliminated in this paper although they fall under the reproductive age group category. Birth data is comprised of births per 1,000 women age 15 to 44 over the 40 years period from 1980 to 2020.
 For the race and ethnicity, every white refers to non-Hispanic, caucassian population group. Every black refers to non-Hispanic, African American group. Hispanic refers to people with Hispanic ethinicity majority from south America to abberiviate. 
 
 
 # Results
 
 ## Trend in US Birth Rates
-The overall trend fluctuates over time, with the highest number of births recorded in 1990 at a rate of 70.9. The second-highest peaks occurred in 1991 and 2007, with rates of 69.3. These peaks are accompanied by valleys. However, the difference between the birth rates in 1980 and 2020 is 12.6, and the gap between the maximum and minimum points during this period is 15.1. These calculations clearly demonstrate the variation over time and suggest that there may be factors influencing the gradual negative slope of the trend. Figure 2 presents the scatter plot version of Figure 1, providing a clearer representation of the negative trend observed in the line graph. Lastly, the year 2007 has been marked in dotted line to signify the beginning of the fall on both graphs.
+The overall trend fluctuates over time, with the highest number of births recorded in 1990 at a rate of 70.9. The second-highest peaks occurred in 1991 and 2007, with rates of 69.3. These peaks are accompanied by valleys. However, the difference between the birth rates in 1980 and 2020 is 12.6, and the gap between the maximum and minimum points during this period is 15.1. These calculations clearly demonstrate the variation over time and suggest that there may be factors influencing the gradual negative slope of the trend. @fig-scatter-graph presents the scatter plot version of @fig-bratetrend-graph, providing a clearer representation of the negative trend observed in the line graph. Lastly, the year 2007 has been marked in dotted line to signify the beginning of the fall on both graphs.
 
 ```{r}
 #| echo: false
@@ -122,12 +121,67 @@ ggplot(data, aes(x = year, y = brate_all)) +
   theme_classic()
 ```
 
+```{r}
+#| echo: false
+#| eval: true
+#| warning: false
+#| message: false
+#| label: tbl-polscatter-table
+#| tbl-cap: "US presidents"
+
+# Load necessary libraries
+library(ggplot2)
+
+# Create a dataframe with information about the Presidents and their respective parties
+presidents <- data.frame(
+  president = c("Ronald Reagan", "George H. W. Bush", "Bill Clinton", "George W. Bush", "Barack Obama", "Donald Trump", "Joe Biden"),
+  party = c("Republican", "Republican", "Democratic", "Republican", "Democratic", "Republican", "Democratic"),
+  start_year = c(1981, 1989, 1993, 2001, 2009, 2017, 2021),
+  end_year = c(1989, 1993, 2001, 2009, 2017, 2021, NA) # NA for current President
+)
+
+head(presidents)
+
+```
+```{r}
+#| echo: false
+#| eval: true
+#| warning: false
+#| message: false
+#| label: fig-polscatter-graph
+#| fig-cap: "Trend in US Birth Rates with political party in their presidential mandate"
+
+# Load necessary libraries
+library(ggplot2)
+
+# Plotting the data with scatter plot and trend lines for each presidential mandate period
+ggplot(data, aes(x = year, y = brate_all)) +
+  geom_point(color = "pink") +
+  geom_smooth(data = subset(data, year >= 1980 & year <= 1981), method = "lm", se = FALSE, color = "blue") +
+  geom_smooth(data = subset(data, year >= 1981 & year <= 1989), method = "lm", se = FALSE, color = "red") +
+  geom_smooth(data = subset(data, year >= 1989 & year <= 1993), method = "lm", se = FALSE, color = "red") +
+  geom_smooth(data = subset(data, year >= 1993 & year <= 2001), method = "lm", se = FALSE, color = "blue") +
+  geom_smooth(data = subset(data, year >= 2001 & year <= 2009), method = "lm", se = FALSE, color = "red") +
+  geom_smooth(data = subset(data, year >= 2009 & year <= 2017), method = "lm", se = FALSE, color = "blue") +
+  geom_smooth(data = subset(data, year >= 2017 & year <= 2021), method = "lm", se = FALSE, color = "red") +
+  geom_vline(xintercept = 2007, linetype = "dotted") +
+  annotate("text", x = 2009, y = 70, label = "2007", vjust = -0.5, hjust = 0.5, color = "black") +
+  geom_hline(yintercept = seq(50, 80, by = 5), color = "lightgrey") +
+  scale_y_continuous(limits = c(50, 80), breaks = seq(50, 80, by = 5)) +
+  scale_x_continuous(limits = c(1980, 2020), breaks = seq(1980, 2020, by = 1), labels = function(x) ifelse(x %% 5 == 0, x, "")) +
+  labs(x = "Year", y = "Births per 1,000 women age 15-44",
+       caption = "Source: Birth Rates collected from CDC Vital Statistics Births Reports for 2015, 2019, and 2020.") +
+  theme_classic()
+
+```
+
+
 ## Trends in Birth Rates by Population Subgroup
-Trends in Birth Rates by Population Subgroup has two panels specified into two: Group A is designated to five-year age group and Group B is designed to illustrate race and ethnicity (ages 15-44).
+@fig-bratepop-graph has two panels specified into two: Group A is designated to five-year age group and Group B is designed to illustrate race and ethnicity (ages 15-44).
 
 Both plots present the year on the x-axis and births per 1,000 women in relevant population subgroup in the y-axis. For group A, we have 6 different lines to group the five-year age group of women from the age 15 to 44. Again, the Great Recession is marked as a dotted vertical line on both panels. While it is generally true that the birth rates drop significantly as of 2007 for the women population group at age between 15 to 29, the elder group at age over 30 shows ascending trends over the year regardless of the event. Also, the age group 15-29 seems to be following downward slope from 1980 until it hits its maximum in 1991. 
 
-Note that the data set is gathered as of 1989 for the race and ethnicity subgroup population, thus the x-axis of the graph starts from 1989. In panel B of @fig-bratepop-graph has three different subgroups. Race and ethnicity is subdivided into three sections, Hispanic, Black, and White. Both white and black are non-Hispanic population. While the white population group shows relatively linear fashion over 30 years, Hispanic population birth groups were 1.7 times and black population birth groups being 1.3 times larger than White population group up until 2007. The birth rates of Hispanic and Black population groups drastically drop over the 10 years from 1989 to 2000. Then another significant drop happened as of 2007 only in Hispanic population group. The change in births per 1,000 women in race and ethnicity population subgroup varies, 7.3, 25.8 and 42.1 in White, Black, and Hispanic group respectively. As of 2012, all race and ethnicity population group illustrate the relatively stable tendency and slowly declining. 
+Note that the data set is gathered as of 1989 for the race and ethnicity subgroup population, thus the x-axis of the graph starts from 1989. In panel B of @fig-bratepop-graph has three different subgroups. Race and ethnicity is subdivided into three sections, Hispanic, Black, and White. Both white and black are non-Hispanic population. While the white population group shows relatively linear fashion over 30 years, Hispanic population birth groups were 1.7 times and black population birth groups being 1.3 times larger than White population group up until 2007. The birth rates of Hispanic and Black population groups drastically drop over the 11 years from 1989 to 2000. Then another significant drop happened as of 2007 only in Hispanic population group. The change in births per 1,000 women in race and ethnicity population subgroup varies, 7.3, 25.8 and 42.1 in White, Black, and Hispanic group respectively. As of 2012, all race and ethnicity population group illustrate the relatively stable tendency and slowly declining. 
 
 ```{r}
 #| echo: false
@@ -206,7 +260,7 @@ Moreover, states began to pass parental involvement laws to limit minors' confid
 
 According to the article from the journal of the National Medical Association, many Hispanic people in the United States retain the customs and traditions of their country of origin. As a result, their use of preventive health care measures is lower than the majority of the population. Moreover, Hispanics often marry and start a family earlier than the average US citizen which corresponds higher birth rate and a higer fertility rate (number of live births per 1,000 women aged 15 to 44 years) than the average. Moreover, Hispanic culture expect women to bear children. Abortion, adoption, and artificial insemination are less acceptable to Hispanic than to the average American (Poma 1987). That explains why Hispanic births rate were much higher comopared to the other population groups in panel B of @fig-bratepop-graph.
 
-Christianity, including protestants and catholic, generally oppose the idea of abortion and view it as morally wrong. They also oppose contraceptive use outside of marriage. Religious group are socially conservative. With this religious reason behind it, the social norm was opposed to the idea of abortion, contraceptive use back in the days which is why this can be a reason why the birth rate is decreasing for all race and ethnicity groups. Shift in religious activities of young Americans. Early 1990s, about 90% of US adults identified as Christians. However, over the time, young Americans are now less likely to become or remain Christian (Pew Research Center 2022). In 2020, unaffiliated group share the greatest part of the American religious landscape in 2020 by parting 23% (PRRI 2020). 
+Another interesting factor could be christianity. Including protestants and catholic, christian generally against with the idea of abortion and view it as morally wrong. They also oppose contraceptive use outside of marriage. Religious group are socially conservative. However, there was a shift in religious activities of young Americans. Early 1990s, about 90% of US adults identified as Christians. However, over the time, young Americans are now less likely to become or remain Christian (Pew Research Center 2022). In 2020, unaffiliated group share the greatest part of the American religious landscape in 2020 by parting 23% (PRRI 2020). This change in religious activity could explain the reason why the birth rate is decreasing for all race and ethnicity groups over the period.
 
 ## Ethical Implication
 It's important to note that beliefs and practices related to abortion, contraceptive use, and sexual activity before marriage can vary within and among different religious groups. Additionally, individual beliefs and practices may not always align perfectly with the official teachings or doctrines of a particular religious tradition.
@@ -221,7 +275,7 @@ As mentioned in the original paper, the population subgroup can be diverged as t
 Therefore, the data might be skewed due to aforementioned reasons. 
 
 ## Future Research
-Political demographic, immigration law, and enforcement.
+It might be worth investigating some other aspects of the society such as political demographic, immigration law, and enforcement. Based on trend in 
 
 \newpage
 
