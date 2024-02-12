@@ -127,7 +127,7 @@ Trends in Birth Rates by Population Subgroup has two panels specified into two: 
 
 Both plots present the year on the x-axis and births per 1,000 women in relevant population subgroup in the y-axis. For group A, we have 6 different lines to grop the five-year age group of women from the age 15 to 44. Again, the Great Recession is marked as a dotted vertical line on both panels. While it is generally true that the birth rates drop significantly as of 2007 for the women population group at age between 15 to 29, the elder group at age over 30 shows ascending trends over the year regardless of the event. Also, the age group 15-29 seems to be following downward slope from 1980 until it hits its maximum in 1991. 
 
-In panel B of @fig-bratepop-graph has three different subgroups. Race and ethnicity is subdivided into three sections, Hispanic, Black, and White. Both white and black are non-Hispanic population.
+Note that the data set is gathered as of 1989 for the race and ethnicity subgroup population, thus the x-axis of the graph starts from 1989. In panel B of @fig-bratepop-graph has three different subgroups. Race and ethnicity is subdivided into three sections, Hispanic, Black, and White. Both white and black are non-Hispanic population. The white population group shows relatively linear fashion compared to other population groups while the birth rates of Hispanic and Black population groups drastically drop over the 10 years from 1989 to 2000. Then another significant drop happened as of 2007 only in Hispanic population group. The change in births per 1,000 women in race and ethnicity population subgroup varies, 7.3, 25.8 and 42.1 in White, Black, and Hispanic group respectively. 
 
 ```{r}
 #| echo: false
@@ -196,7 +196,6 @@ graph_B <- ggplot(data, aes(x = year)) +
 grid.arrange(graph_A, graph_B, nrow = 1)
 
 ```
-
 
 # Discussion
 
