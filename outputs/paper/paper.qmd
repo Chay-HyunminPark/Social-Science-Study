@@ -125,9 +125,9 @@ ggplot(data, aes(x = year, y = brate_all)) +
 ## Trends in Birth Rates by Population Subgroup
 Trends in Birth Rates by Population Subgroup has two panels specified into two: Group A is designated to five-year age group and Group B is designed to illustrate race and ethnicity (ages 15-44).
 
-Both plots present the year on the x-axis and births per 1,000 women in relevant population subgroup in the y-axis. For group A, we have 6 different lines to grop the five-year age group of women from the age 15 to 44. Again, the Great Recession is marked as a dotted vertical line on both panels. While it is generally true that the birth rates drop significantly as of 2007 for the women population group at age between 15 to 29, the elder group at age over 30 shows ascending trends over the year regardless of the event. Also, the age group 15-29 seems to be following downward slope from 1980 until it hits its maximum in 1991. 
+Both plots present the year on the x-axis and births per 1,000 women in relevant population subgroup in the y-axis. For group A, we have 6 different lines to group the five-year age group of women from the age 15 to 44. Again, the Great Recession is marked as a dotted vertical line on both panels. While it is generally true that the birth rates drop significantly as of 2007 for the women population group at age between 15 to 29, the elder group at age over 30 shows ascending trends over the year regardless of the event. Also, the age group 15-29 seems to be following downward slope from 1980 until it hits its maximum in 1991. 
 
-Note that the data set is gathered as of 1989 for the race and ethnicity subgroup population, thus the x-axis of the graph starts from 1989. In panel B of @fig-bratepop-graph has three different subgroups. Race and ethnicity is subdivided into three sections, Hispanic, Black, and White. Both white and black are non-Hispanic population. The white population group shows relatively linear fashion compared to other population groups while the birth rates of Hispanic and Black population groups drastically drop over the 10 years from 1989 to 2000. Then another significant drop happened as of 2007 only in Hispanic population group. The change in births per 1,000 women in race and ethnicity population subgroup varies, 7.3, 25.8 and 42.1 in White, Black, and Hispanic group respectively. 
+Note that the data set is gathered as of 1989 for the race and ethnicity subgroup population, thus the x-axis of the graph starts from 1989. In panel B of @fig-bratepop-graph has three different subgroups. Race and ethnicity is subdivided into three sections, Hispanic, Black, and White. Both white and black are non-Hispanic population. While the white population group shows relatively linear fashion over 30 years, Hispanic population birth groups were 1.7 times and black population birth groups being 1.3 times larger than White population group up until 2007. The birth rates of Hispanic and Black population groups drastically drop over the 10 years from 1989 to 2000. Then another significant drop happened as of 2007 only in Hispanic population group. The change in births per 1,000 women in race and ethnicity population subgroup varies, 7.3, 25.8 and 42.1 in White, Black, and Hispanic group respectively. As of 2012, all race and ethnicity population group illustrate the relatively stable tendency and slowly declining. 
 
 ```{r}
 #| echo: false
@@ -204,18 +204,30 @@ grid.arrange(graph_A, graph_B, nrow = 1)
 In panel A of @fig-bratepop-graph can be interpreted as the proportion of US women using a contraceptive method rose from 56% in 1982 to 60% in 1988 and 64% in 1995. This trends in contraceptive use have implications for downward shifts in preganancy rates which ultimately affects birth rates (Piccinino and Mosher 1998). 
 Moreover, states began to pass parental involvement laws to limit minors' confidential access to abortion (Myers 2022). Meaning that although by 1980 judicial precedent established that minors can consent to abortion services absent a valid restriction, as of 1980, minors had a limitation on abortion which possibly draw correlation between the more usage in contraceptive measurements to prevent the pregnancy.
 
-In panel B of @fig-bratepop-graph, major religion of Hispanic, Black, White  religious reason of each race and ethnicity.
+In panel B of @fig-bratepop-graph, Hispanic group 
 
-Here we are dissecting the cultural and religious difference between the races among the population subgroup. 
-Hispanic, majority catholic,
-White, christian, catholic, etc
-Black, christian, catholic, etc
+Regarding abortion, contraceptive use, and sexual activity before marriage:
 
-It is prevailed that certain religion does not allow the abortion, saying that it disobey the words of God or whatever. 
+ **White Evangelical Protestants**:
+   - Generally oppose abortion and view it as morally wrong, often advocating for anti-abortion legislation.
+   - Emphasize abstinence before marriage and may discourage or oppose contraceptive use outside of marriage.
 
--whether they accept the abortion or not, cultural perspectives, whether marriage affects the decision of keeping a child or not.<- financial reason 
+ **White Mainline (Non-Evangelical) Protestants**:
+   - Views on abortion and contraceptive use may vary within this group, but tend to be less dogmatic compared to evangelical Protestants.
+   - May hold a range of views on sexual activity before marriage, with some advocating for abstinence and others accepting of premarital sexual relationships.
+
+ **Black Protestants**:
+   - Views on abortion and contraceptive use may vary within this group, but many Black Protestant denominations are socially conservative and oppose abortion.
+   - Teachings on sexual activity before marriage may emphasize abstinence, although individual beliefs and practices may vary.
+
+ **Hispanic Catholics**:
+   -  Official Catholic doctrine opposes abortion and teaches that life begins at conception, making abortion morally unacceptable.
+   - Contraceptive use is a topic of debate within the Catholic Church, with the official stance opposing artificial contraception, although many Catholics use contraceptives despite this teaching.
+   - Catholic teachings emphasize abstinence before marriage but recognize that many Catholics engage in premarital sexual activity.
+
 
 ## Ethical Implication
+It's important to note that beliefs and practices related to abortion, contraceptive use, and sexual activity before marriage can vary within and among different religious groups. Additionally, individual beliefs and practices may not always align perfectly with the official teachings or doctrines of a particular religious tradition.
 
 ## Accounting for bias
 
