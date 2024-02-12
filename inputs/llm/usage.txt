@@ -2528,7 +2528,3 @@ print(head(presidents_data))
 ```
 
 This script creates a dataset named "presidents_data" containing information about the Presidents of the United States from 1980 to 2020 along with their respective political parties. You can use this dataset to plot birth rates over the years and distinguish between Democratic and Republican presidencies, as shown in your example code.
-
-User
-
-ChatGPT
