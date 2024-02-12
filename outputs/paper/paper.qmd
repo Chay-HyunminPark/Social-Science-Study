@@ -57,7 +57,6 @@ The overall trend in US Birth Rates fluctuates over time, with the highest numbe
 #| label: fig-bratetrend-graph
 #| fig-cap: "Trend in US Birth Rates"
 
-
 # Load necessary libraries
 library(ggplot2)
 
@@ -77,8 +76,7 @@ ggplot(data, aes(x = year, y = brate_all)) +
   scale_x_continuous(limits = c(1980, 2020), breaks = seq(1980, 2020, by = 1), labels = function(x) ifelse(x %% 5 == 0, x, "")) +
   labs(x = NULL, y = "Births per 1,000 women age 15-44",
        caption = "Source: Birth Rates collected from CDC Vital Statistics Births Reports for 2015, 2019, and 2020.") +
-  theme_classic() +
-  theme(text = element_text(family = "Times New Roman"))
+  theme_classic()
 
 ```
 
@@ -110,8 +108,7 @@ ggplot(data, aes(x = year, y = brate_all)) +
   scale_x_continuous(limits = c(1980, 2020), breaks = seq(1980, 2020, by = 1), labels = function(x) ifelse(x %% 5 == 0, x, "")) +
   labs(x = NULL, y = "Births per 1,000 women age 15-44",
        caption = "Source: Birth Rates collected from CDC Vital Statistics Births Reports for 2015, 2019, and 2020.") +
-  theme_classic() +
-  theme(text = element_text(family = "Times New Roman"))
+  theme_classic() 
 
 ```
 
@@ -148,8 +145,7 @@ ggplot(data, aes(x = year, y = brate_all)) +
   labs(x = NULL, y = "Births per 1,000 women age 15-44",
        caption = "Source: Birth Rates collected from CDC Vital Statistics Births Reports for 2015, 2019, and 2020.", 
        title = NULL) +
-  theme_classic() +
-  theme(text = element_text(family = "Times New Roman"))
+  theme_classic() 
 
 ```
 
