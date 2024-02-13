@@ -1,6 +1,6 @@
 # Social Science Study on Birth Rates on US
 
-This repository focuses on analyzing and visualizing data related to ~
+This repository focuses on analyzing and visualizing data related to birth rates in US, replicating the study conducted by Kearney, Levine, and Pardue (2022). Through an analysis of trends spanning from 1980 to 2020, we investigate variations in birth rates among different age groups and disparities based on the race and ethnicity of mothers. While initially attributing the decline to the Great Recession, our analysis uncovers additional factors contributing to this trend. Furthermore, our exploration delves into socio-cultural aspects, offering insights for policymakers and researchers interested in population trends and their implications.
 
 ## Statement on LLM Usage
 Certain sections of the code were generated with the assistance of ChatGPT3.5. The complete chat history is available in `inputs/llms/usage.txt`. It's important to acknowledge the collaboration with this language model to enhance the analytical process.
@@ -10,16 +10,13 @@ Certain sections of the code were generated with the assistance of ChatGPT3.5. T
 ### Dependencies
 To reproduce the analysis, ensure you have the following R packages installed:
 
-- `knitr`
-- `lubridate`
-- `tidyverse`
-- `kableExtra`
 - `ggplot2`
+- 'gridExtra'
 
 You can install these packages using the following command:
 
 ```R
-install.packages(c("knitr", "lubridate", "tidyverse", "kableExtra", "ggplot2"))
+install.packages(c("ggplot2", "gridExtra"))
 ```
 
 ### Code Execution
@@ -47,8 +44,6 @@ The repo is structured as:
 -   `outputs/paper` contains the files used to generate the paper, including the Quarto document and reference bibliography file, as well as the PDF of the paper. 
 -   `scripts` contains the R scripts used to simulate, download and clean data.
   
-## Additional Resources
-~
 
 
 ## Code and Data Availability
