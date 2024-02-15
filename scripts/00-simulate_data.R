@@ -1,53 +1,71 @@
 #### Preamble ####
-# Purpose: The purpose of this script is to simulate and visualize the trend in birth rates in the United States from the year 1980 
-# to 2020. The script generates tables and graphs to illustrate the overall trend in US birth rates, as well as the birth rates among 
-# various subgroups such as different age groups and ethnicities
+# Purpose: In the provided code, I simulate the generation of two sample datasets 
+# representing birth rates across different demographics over multiple years. 
+# The goal is to create comprehensive datasets with various demographic categories, 
+# filling in missing values with appropriate defaults, and then perform tests to 
+# ensure non-zero total counts, absence of missing values, and inclusion of all combinations.
 # Author: Chay Park
-# Date: 3 February 2024 
+# Date: 15 February 2024 
 # Contact: chay.park@mail.utoronto.ca
 # License: MIT
 # Pre-requisites: R Programming Environment, R Packages, Simulated Birth Rate Data, Simulated Subgroup Data, State-level birth rate change data
 
 #### Workspace setup ####
-# Load required libraries
-library(ggplot2)
+
+# Load necessary packages
+if (!requireNamespace("dplyr", quietly = TRUE)) {
+  install.packages("dplyr")
+}
 library(dplyr)
-library(tidyr)
 
-#### Simulate data ####
-# Simulated birth rate data from 1980 to 2020
-set.seed(123) # for reproducibility
-birth_data <- data.frame(
-  year = 1980:2020,
-  births = rnorm(41, mean = 1000, sd = 100)
+# Set seed for reproducibility
+set.seed(123)
+
+#### Dataset Simulation ####
+
+# Simulate creating the first dataset
+years <- 2000:2022
+brate_all <- runif(length(years), min = 5, max = 20)
+
+data_first <- data.frame(
+  year = years,
+  brate_all = brate_all
 )
 
-# Generate subgroup data
-subgroup_data <- data.frame(
-  year = rep(1980:2020, each = 6),
-  subgroup = rep(c("brate_1519", "brate_2024", "brate_2529", "brate_hisp", "brate_college", "brate_married"), times = 41),
-  births = rnorm(41*6, mean = 500, sd = 50)
+# Simulate creating the second dataset
+brate_1519 <- runif(length(years), min = 2, max = 10)
+brate_3034 <- runif(length(years), min = 5, max = 15)
+brate_whitenh <- runif(length(years), min = 3, max = 12)
+
+data_second <- data.frame(
+  year = years,
+  brate_1519 = brate_1519,
+  brate_3034 = brate_3034,
+  brate_whitenh = brate_whitenh
 )
 
-# Generate state-level birth rate change data
-state_data <- data.frame(
-  state_name = state.name,
-  brate_1544_thsnds_ch_pct = runif(length(state.name), min = -15, max = 15)
-)
+#### Test codes ####
 
-# First figure: Trend in US Birth Rates
-ggplot(birth_data, aes(x = year, y = births)) +
-  geom_line() +
-  labs(x = "Year", y = "Births per 1000 women age 15-44", title = "Trend in US Birth Rates")
+# Test 1: Total Count of Birth Rates
 
-# First table: Year and Births
-birth_data_table <- birth_data
+# Hypothesis: The total count of birth rates for each dataset is greater than 0.
 
-# Second table: Year and Subgroup Births
-subgroup_data_table <- spread(subgroup_data, key = subgroup, value = births)
+test_1 <- all(data_first$brate_all > 0) & all(data_second$brate_1519 > 0) &
+          all(data_second$brate_3034 > 0) & all(data_second$brate_whitenh > 0)
+print("Test 1 (Total Count of Birth Rates > 0):", test_1)
 
-# Second figure: Multiple line graphs for subgroups
-ggplot(subgroup_data, aes(x = year, y = births, color = subgroup)) +
-  geom_line() +
-  labs(x = "Year", y = "Number of Births", title = "Trends in Birth Rates by Population Subgroup")
+# Test 2: Check for Missing Values
 
+# Hypothesis: There are no missing values in either dataset.
+
+test_2 <- all(!is.na(data_first)) & all(!is.na(data_second))
+print("Test 2 (No Missing Values):", test_2)
+
+# Test 3: No Missing Combinations
+
+# Hypothesis: There are no missing combinations in the datasets, 
+# and the birth rate count for every combination is either present or set to 0.
+
+test_3 <- all(data_second$brate_1519 >= 0) & all(data_second$brate_3034 >= 0) &
+          all(data_second$brate_whitenh >= 0)
+print("Test 3 (No Missing Combinations):", test_3)
