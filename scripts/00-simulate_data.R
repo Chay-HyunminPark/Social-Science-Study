@@ -1,10 +1,9 @@
 #### Preamble ####
 # Purpose: The purpose of this script is to simulate and visualize the trend in birth rates in the United States from the year 1980 
 # to 2020. The script generates tables and graphs to illustrate the overall trend in US birth rates, as well as the birth rates among 
-# various subgroups such as different age groups, ethnicities, educational levels, and marital statuses. 
-# Additionally, the script creates a state-level map to visualize the change in birth rates across different states over the specified period.
+# various subgroups such as different age groups and race and ethnicities. 
 # Author: Chay Park
-# Date: 3 February 2024 
+# Date: 15 February 2024 
 # Contact: chay.park@mail.utoronto.ca
 # License: MIT
 # Pre-requisites: R Programming Environment, R Packages, Simulated Birth Rate Data, Simulated Subgroup Data, State-level birth rate change data
