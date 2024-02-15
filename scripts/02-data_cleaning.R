@@ -8,7 +8,7 @@
 # Pre-requisites: Need to download the replication package
 
 #### Workspace setup ####
-install.packages(c("knitr", "lubridate", "tidyverse"))
+# install.packages(c("knitr", "lubridate", "tidyverse"))
 
 # See a list of available packages
 library(knitr)
