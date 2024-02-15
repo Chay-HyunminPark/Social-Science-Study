@@ -11,16 +11,16 @@
 
 
 #### Workspace setup ####
-install.packages("ggplot2")
+# install.packages("ggplot2")
 library(ggplot2)
 
-install.packages("dplyr")
+# install.packages("dplyr")
 library(dplyr)
 
-install.packages("tidyr")
+# install.packages("tidyr")
 library(tidyr)
 
-install.packages("usmap")
+# install.packages("usmap")
 library(usmap)
 
 #### Test data ####
