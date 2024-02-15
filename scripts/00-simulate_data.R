@@ -1,15 +1,7 @@
 #### Preamble ####
-<<<<<<< HEAD
 # Purpose: The purpose of this script is to simulate and visualize the trend in birth rates in the United States from the year 1980 
 # to 2020. The script generates tables and graphs to illustrate the overall trend in US birth rates, as well as the birth rates among 
 # various subgroups such as different age groups and race and ethnicities. 
-=======
-# Purpose: In the provided code, I simulate the generation of two sample datasets 
-# representing birth rates across different demographics over multiple years. 
-# The goal is to create comprehensive datasets with various demographic categories, 
-# filling in missing values with appropriate defaults, and then perform tests to 
-# ensure non-zero total counts, absence of missing values, and inclusion of all combinations.
->>>>>>> a58e1fe82c36a9fb83b6a5c5cc440fde66db2620
 # Author: Chay Park
 # Date: 15 February 2024 
 # Contact: chay.park@mail.utoronto.ca
