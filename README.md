@@ -25,13 +25,6 @@ The analysis is performed in R, and the code is available in the `analysis` dire
 4. Generate tables and graphs to visualize trends.
 
 
-## Folder Structure
-
-- **inputs:** Contains input data and additional resources.
-  - **llms:** Includes the chat history with the language model.
-- **outputs:** Stores generated tables, graphs, and other output files.
-- **scripts:** Holds R scripts for data simulating, downloading, cleaning, and tests.
-
 ## File Structure
 
 The repo is structured as:
