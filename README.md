@@ -1,4 +1,4 @@
-# Social Science Study on Birth Rates on US
+# Data analysis and factors on Birth Rates in US
 
 This repository focuses on analyzing and visualizing data related to birth rates in US, replicating the study conducted by Kearney, Levine, and Pardue (2022). Through an analysis of trends spanning from 1980 to 2020, we investigate variations in birth rates among different age groups and disparities based on the race and ethnicity of mothers. While initially attributing the decline to the Great Recession, our analysis uncovers additional factors contributing to this trend. Furthermore, our exploration delves into socio-cultural aspects, offering insights for policymakers and researchers interested in population trends and their implications.
 
@@ -9,6 +9,8 @@ To reproduce the analysis, ensure you have the following R packages installed:
 
 - `ggplot2`
 - 'gridExtra'
+- 'dplyr'
+- tidyr
 
 You can install these packages using the following command:
 
