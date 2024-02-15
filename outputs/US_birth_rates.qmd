@@ -3,11 +3,7 @@ title: "Potential Factors of Decreasing Birth Rates in the US since the Great Re
 subtitle: "Reproduction of 'The Puzzle of Falling US Birth Rates since the Great Recession'(Kearney, Levine & Pardue, 2022)"
 author: 
   - Chay Park
-<<<<<<< HEAD
 thanks: "Code and data are available at: https://github.com/Chay-HyunminPark/Social-Science-Study. A replication of various aspects in this paper are available at: https://doi.org/10.48152/ssrp-55pn-6h10"
-=======
-thanks: "Code and data are available at: https://github.com/Chay-HyunminPark/Social-Science-Study. A replication of various aspects in this paper are available at: https://doi.org/10.48152/ssrp-srs6-t802""
->>>>>>> a58e1fe82c36a9fb83b6a5c5cc440fde66db2620
 date: today
 date-format: long
 abstract: "This paper replicates Kearney, Levine, and Pardue's (2022) study on the notable decrease in US birth rates from 2007 to 2020. Analyzing data spanning from 1980 to 2020, we examine variations in birth rates among different age groups and disparities based on the race and ethnicity of mothers. Our analysis uncovers additional factors contributing to this trend beyond the initial attribution to the Great Recession. Specifically, socio-economic factors such as contraceptive use, cultural norms, and financial stability play key roles in the observed decline in birth rates."
