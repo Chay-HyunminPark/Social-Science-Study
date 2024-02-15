@@ -2733,3 +2733,82 @@ print("Test 3 (No Missing Combinations):", test_3)
 ```
 
 In this script, we simulate the creation of two datasets representing birth rates across different demographics over multiple years and then perform tests to ensure non-zero total counts, absence of missing values, and inclusion of all combinations. Adjust the parameters of the `runif` function to better suit your needs for simulating the data in R.
+
+User
+Run the test code on the real dataset. The real dataset I have is two CSV files. 
+The first one is called 'fig_1.csv' and it has two columns year, brate_all.
+The second one is called 'figs_2a_2b' and it has 10 columns: year, brate_1519, brate_2024, brate_2529, brate_3034, brate_3539, brate_4044, brate_whitenh, brate_blacknh, brate_hisp. 
+
+ChatGPT
+To run the test code on the real datasets 'fig_1.csv' and 'figs_2a_2b.csv', you can modify the script to read these files and then perform the tests. Here's how you can do it:
+
+```R
+#### Preamble ####
+# Purpose: In the provided code, I run tests on real datasets representing birth rates across different demographics over multiple years.
+
+# Author: [Your Name]
+# Date: [Current Date]
+# Contact: [Your Contact Information]
+# License: [License Information]
+
+#### Workspace setup ####
+
+# Load necessary packages
+if (!requireNamespace("dplyr", quietly = TRUE)) {
+  install.packages("dplyr")
+}
+library(dplyr)
+
+#### Load real datasets ####
+
+# Load first dataset
+fig_1 <- read.csv("fig_1.csv")
+
+# Load second dataset
+figs_2a_2b <- read.csv("figs_2a_2b.csv")
+
+#### Test codes ####
+
+# Test 1: Total Count of Birth Rates
+
+# Hypothesis: The total count of birth rates for each dataset is greater than 0.
+
+test_1_fig_1 <- all(fig_1$brate_all > 0)
+test_1_fig_2 <- all(figs_2a_2b$brate_1519 > 0) & all(figs_2a_2b$brate_2024 > 0) &
+               all(figs_2a_2b$brate_2529 > 0) & all(figs_2a_2b$brate_3034 > 0) &
+               all(figs_2a_2b$brate_3539 > 0) & all(figs_2a_2b$brate_4044 > 0) &
+               all(figs_2a_2b$brate_whitenh > 0) & all(figs_2a_2b$brate_blacknh > 0) &
+               all(figs_2a_2b$brate_hisp > 0)
+
+print("Test 1 (Total Count of Birth Rates > 0) for fig_1.csv:", test_1_fig_1)
+print("Test 1 (Total Count of Birth Rates > 0) for figs_2a_2b.csv:", test_1_fig_2)
+
+# Test 2: Check for Missing Values
+
+# Hypothesis: There are no missing values in either dataset.
+
+test_2_fig_1 <- all(!is.na(fig_1))
+test_2_fig_2 <- all(!is.na(figs_2a_2b))
+
+print("Test 2 (No Missing Values) for fig_1.csv:", test_2_fig_1)
+print("Test 2 (No Missing Values) for figs_2a_2b.csv:", test_2_fig_2)
+
+# Test 3: No Missing Combinations
+
+# Hypothesis: There are no missing combinations in the datasets, 
+# and the birth rate count for every combination is either present or set to 0.
+
+test_3_fig_2 <- all(figs_2a_2b$brate_1519 >= 0) & all(figs_2a_2b$brate_2024 >= 0) &
+                all(figs_2a_2b$brate_2529 >= 0) & all(figs_2a_2b$brate_3034 >= 0) &
+                all(figs_2a_2b$brate_3539 >= 0) & all(figs_2a_2b$brate_4044 >= 0) &
+                all(figs_2a_2b$brate_whitenh >= 0) & all(figs_2a_2b$brate_blacknh >= 0) &
+                all(figs_2a_2b$brate_hisp >= 0)
+
+print("Test 3 (No Missing Combinations) for figs_2a_2b.csv:", test_3_fig_2)
+```
+
+Replace `["Your Name"]`, `["Current Date"]`, `["Your Contact Information"]`, and `["License Information"]` with your actual information. This script loads the real datasets, runs the specified tests, and prints the results. Make sure to adjust the file paths if the datasets are located in a different directory.
+
+User
+
+ChatGPT
